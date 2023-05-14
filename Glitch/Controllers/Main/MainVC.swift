@@ -23,7 +23,6 @@ class MainVC: UIViewController {
     }()
     
     @objc func flip(_ sender: CardView) {
-        
         let transitionOptions: UIView.AnimationOptions = [
             .transitionFlipFromRight,
             .showHideTransitionViews
@@ -54,6 +53,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        bindData()
     }
     
     private func setupViews() {
@@ -67,5 +67,12 @@ class MainVC: UIViewController {
             $0.height.equalTo(450.0)
             $0.width.equalTo(300.0)
         }
+    }
+}
+
+extension MainVC {
+    func bindData() {
+        cardView.profileCardView.ntfView.image = UIImage(named: "ProfileDummy")
+        cardView.qrCardView.qrView.image = UIImage(named: "QRDummy")
     }
 }

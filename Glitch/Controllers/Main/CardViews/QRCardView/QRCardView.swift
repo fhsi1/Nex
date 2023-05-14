@@ -13,9 +13,16 @@ class QRCardView: UIView {
     
     lazy var backButtonView: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemYellow
+        button.backgroundColor = UIColor(red: 0.07, green: 0.00, blue: 0.47, alpha: 1.00)
         button.layer.cornerRadius = 18.0
         return button
+    }()
+    
+    lazy var qrView: UIImageView = {
+        let view = UIImageView()
+//        view.backgroundColor = .systemPurple
+        view.layer.cornerRadius = 18.0
+        return view
     }()
     
     override init(frame: CGRect) {
@@ -30,11 +37,19 @@ class QRCardView: UIView {
     
     private func setupViews() {
         [
-            backButtonView
+            backButtonView,
+            qrView
         ].forEach { addSubview($0) }
         
         backButtonView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        
+        qrView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().inset(50.0)
+            $0.width.equalTo(230.0)
+            $0.height.equalTo(qrView.snp.width)
         }
     }
 }

@@ -18,6 +18,13 @@ class ProfileCardView: UIView {
         return button
     }()
     
+    lazy var ntfView: UIImageView = {
+        let view = UIImageView()
+        view.backgroundColor = .systemYellow
+        view.layer.cornerRadius = 100.0
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,11 +37,19 @@ class ProfileCardView: UIView {
     
     private func setupViews() {
         [
-            backButtonView
+            backButtonView,
+            ntfView
         ].forEach { addSubview($0) }
         
         backButtonView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        
+        ntfView.snp.makeConstraints {
+            $0.width.equalTo(200.0)
+            $0.height.equalTo(ntfView.snp.width)
+            $0.top.equalToSuperview().inset(50.0)
+            $0.centerX.equalToSuperview()
         }
     }
 }

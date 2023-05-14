@@ -11,5 +11,19 @@ import UIKit
 class RankVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigationBar()
+        setupViews()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "순위"
+    }
+    
+    private func setupViews() {
+        [
+            
+        ].forEach { view.addSubview($0) }
     }
 }

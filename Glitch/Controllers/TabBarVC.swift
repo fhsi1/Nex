@@ -28,7 +28,7 @@ final class TabBarVC: UITabBarController {
     
     lazy var rankVC: UIViewController =  {
         let vc = UINavigationController(rootViewController: RankVC())
-        let tabBarItem = UITabBarItem(title: "이벤트", image: UIImage(systemName: "person.crop.circle"), selectedImage: UIImage(systemName: "person.crop.circle"))
+        let tabBarItem = UITabBarItem(title: "순위", image: UIImage(systemName: "person.crop.circle"), selectedImage: UIImage(systemName: "person.crop.circle"))
         vc.tabBarItem = tabBarItem
         
         return vc
@@ -36,7 +36,7 @@ final class TabBarVC: UITabBarController {
     
     lazy var eventVC: UIViewController =  {
         let vc = UINavigationController(rootViewController: EventVC())
-        let tabBarItem = UITabBarItem(title: "순위", image: UIImage(systemName: "suit.heart"), selectedImage: UIImage(systemName: "suit.heart"))
+        let tabBarItem = UITabBarItem(title: "이벤트", image: UIImage(systemName: "suit.heart"), selectedImage: UIImage(systemName: "suit.heart"))
         vc.tabBarItem = tabBarItem
         
         return vc

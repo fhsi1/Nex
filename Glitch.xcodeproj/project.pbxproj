@@ -17,6 +17,8 @@
 		1041C68E29FE486C00836EEB /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 1041C68D29FE486C00836EEB /* Moya */; };
 		1041C69029FE486C00836EEB /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 1041C68F29FE486C00836EEB /* ReactiveMoya */; };
 		1041C69229FE486C00836EEB /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 1041C69129FE486C00836EEB /* RxMoya */; };
+		104BF2BF2A10E9A500EFA7A4 /* CompleteEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BF2BE2A10E9A500EFA7A4 /* CompleteEventVC.swift */; };
+		104BF2C12A10EA7C00EFA7A4 /* CompleteAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BF2C02A10EA7C00EFA7A4 /* CompleteAlertView.swift */; };
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
@@ -34,6 +36,8 @@
 		1041C67929FE45C500836EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1041C67C29FE45C500836EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1041C67E29FE45C500836EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		104BF2BE2A10E9A500EFA7A4 /* CompleteEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteEventVC.swift; sourceTree = "<group>"; };
+		104BF2C02A10EA7C00EFA7A4 /* CompleteAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAlertView.swift; sourceTree = "<group>"; };
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
@@ -80,8 +84,8 @@
 			children = (
 				1041C68729FE483400836EEB /* App */,
 				1041C68829FE484100836EEB /* Controllers */,
-				1041C68929FE484A00836EEB /* Network */,
-				10F45EB02A027BAB0057F3D6 /* Utilites */,
+				104BF2B72A10E5C200EFA7A4 /* Network */,
+				104BF2BA2A10E5DB00EFA7A4 /* Utilites */,
 				1041C67E29FE45C500836EEB /* Info.plist */,
 			);
 			path = Glitch;
@@ -110,11 +114,59 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		1041C68929FE484A00836EEB /* Network */ = {
+		104BF2B72A10E5C200EFA7A4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		104BF2BA2A10E5DB00EFA7A4 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				104BF2BB2A10E5E700EFA7A4 /* View */,
+				104BF2BC2A10E5EE00EFA7A4 /* Module */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		104BF2BB2A10E5E700EFA7A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		104BF2BC2A10E5EE00EFA7A4 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		104BF2BD2A10E96800EFA7A4 /* ModalVC */ = {
+			isa = PBXGroup;
+			children = (
+				104BF2C22A10ECFA00EFA7A4 /* Complete */,
+				104BF2C32A10ED0C00EFA7A4 /* Update */,
+			);
+			path = ModalVC;
+			sourceTree = "<group>";
+		};
+		104BF2C22A10ECFA00EFA7A4 /* Complete */ = {
+			isa = PBXGroup;
+			children = (
+				104BF2BE2A10E9A500EFA7A4 /* CompleteEventVC.swift */,
+				104BF2C02A10EA7C00EFA7A4 /* CompleteAlertView.swift */,
+			);
+			path = Complete;
+			sourceTree = "<group>";
+		};
+		104BF2C32A10ED0C00EFA7A4 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Update;
 			sourceTree = "<group>";
 		};
 		106C290E2A10849100E0F78E /* CardViews */ = {
@@ -172,31 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				10AFB4392A0F538900F23794 /* EventVC.swift */,
+				104BF2BD2A10E96800EFA7A4 /* ModalVC */,
 			);
 			path = Event;
-			sourceTree = "<group>";
-		};
-		10F45EB02A027BAB0057F3D6 /* Utilites */ = {
-			isa = PBXGroup;
-			children = (
-				10F45EB12A027C0E0057F3D6 /* View */,
-				10F45EB22A027C250057F3D6 /* Module */,
-			);
-			path = Utilites;
-			sourceTree = "<group>";
-		};
-		10F45EB12A027C0E0057F3D6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		10F45EB22A027C250057F3D6 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,12 +312,14 @@
 			files = (
 				1041C67529FE45C400836EEB /* TabBarVC.swift in Sources */,
 				10AFB4342A0F533600F23794 /* MainVC.swift in Sources */,
+				104BF2C12A10EA7C00EFA7A4 /* CompleteAlertView.swift in Sources */,
 				10AFB4382A0F537600F23794 /* RankVC.swift in Sources */,
 				106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */,
 				1041C67129FE45C400836EEB /* AppDelegate.swift in Sources */,
 				106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */,
 				10AFB4362A0F535400F23794 /* CommunityVC.swift in Sources */,
 				1041C67329FE45C400836EEB /* SceneDelegate.swift in Sources */,
+				104BF2BF2A10E9A500EFA7A4 /* CompleteEventVC.swift in Sources */,
 				106C29102A1086F200E0F78E /* CardView.swift in Sources */,
 				10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */,
 			);
