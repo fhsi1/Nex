@@ -9,6 +9,13 @@ import Foundation
 import UIKit
 
 class EventVC: UIViewController {
+    
+    private lazy var backView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "BackView")
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .nDarkBlack
@@ -26,7 +33,11 @@ class EventVC: UIViewController {
     
     private func setupViews() {
         [
-            
+            backView
         ].forEach { view.addSubview($0) }
+        
+        backView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }

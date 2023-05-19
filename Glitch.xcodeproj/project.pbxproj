@@ -49,9 +49,8 @@
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
-		10AFB4342A0F533600F23794 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4332A0F533600F23794 /* MainVC.swift */; };
-		10AFB4362A0F535400F23794 /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4352A0F535400F23794 /* CommunityVC.swift */; };
-		10AFB4382A0F537600F23794 /* RankVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4372A0F537600F23794 /* RankVC.swift */; };
+		10AFB4342A0F533600F23794 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4332A0F533600F23794 /* HomeVC.swift */; };
+		10AFB4362A0F535400F23794 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4352A0F535400F23794 /* AccountVC.swift */; };
 		10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4392A0F538900F23794 /* EventVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,9 +94,8 @@
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
-		10AFB4332A0F533600F23794 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		10AFB4352A0F535400F23794 /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
-		10AFB4372A0F537600F23794 /* RankVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankVC.swift; sourceTree = "<group>"; };
+		10AFB4332A0F533600F23794 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		10AFB4352A0F535400F23794 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		10AFB4392A0F538900F23794 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,10 +160,9 @@
 			children = (
 				105196CA2A17B14E0070CBBE /* CoreVC.swift */,
 				1041C67429FE45C400836EEB /* TabBarVC.swift */,
-				10AFB42F2A0F530300F23794 /* Main */,
-				10AFB4302A0F530A00F23794 /* Community */,
-				10AFB4312A0F531500F23794 /* Rank */,
+				10AFB42F2A0F530300F23794 /* Home */,
 				10AFB4322A0F532100F23794 /* Event */,
+				10AFB4302A0F530A00F23794 /* Account */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -284,29 +281,21 @@
 			path = QRCardView;
 			sourceTree = "<group>";
 		};
-		10AFB42F2A0F530300F23794 /* Main */ = {
+		10AFB42F2A0F530300F23794 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				10AFB4332A0F533600F23794 /* MainVC.swift */,
+				10AFB4332A0F533600F23794 /* HomeVC.swift */,
 				106C290E2A10849100E0F78E /* CardViews */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		10AFB4302A0F530A00F23794 /* Community */ = {
+		10AFB4302A0F530A00F23794 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				10AFB4352A0F535400F23794 /* CommunityVC.swift */,
+				10AFB4352A0F535400F23794 /* AccountVC.swift */,
 			);
-			path = Community;
-			sourceTree = "<group>";
-		};
-		10AFB4312A0F531500F23794 /* Rank */ = {
-			isa = PBXGroup;
-			children = (
-				10AFB4372A0F537600F23794 /* RankVC.swift */,
-			);
-			path = Rank;
+			path = Account;
 			sourceTree = "<group>";
 		};
 		10AFB4322A0F532100F23794 /* Event */ = {
@@ -423,15 +412,14 @@
 				105196992A178E6C0070CBBE /* InfoView.swift in Sources */,
 				105196CB2A17B14E0070CBBE /* CoreVC.swift in Sources */,
 				1041C67529FE45C400836EEB /* TabBarVC.swift in Sources */,
-				10AFB4342A0F533600F23794 /* MainVC.swift in Sources */,
+				10AFB4342A0F533600F23794 /* HomeVC.swift in Sources */,
 				104BF2C12A10EA7C00EFA7A4 /* CompleteAlertView.swift in Sources */,
-				10AFB4382A0F537600F23794 /* RankVC.swift in Sources */,
 				106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */,
 				1041C67129FE45C400836EEB /* AppDelegate.swift in Sources */,
 				105196952A178E460070CBBE /* halfCircleLeftView.swift in Sources */,
 				1051969B2A178E7C0070CBBE /* UIColor+.swift in Sources */,
 				106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */,
-				10AFB4362A0F535400F23794 /* CommunityVC.swift in Sources */,
+				10AFB4362A0F535400F23794 /* AccountVC.swift in Sources */,
 				105196932A178E320070CBBE /* DashedLineView.swift in Sources */,
 				1041C67329FE45C400836EEB /* SceneDelegate.swift in Sources */,
 				104BF2BF2A10E9A500EFA7A4 /* CompleteEventVC.swift in Sources */,

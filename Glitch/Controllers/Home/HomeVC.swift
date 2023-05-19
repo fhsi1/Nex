@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 import SnapKit
 
-class MainVC: UIViewController {
+class HomeVC: UIViewController {
+    
+    private lazy var backView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "BackView")
+        return view
+    }()
     
     lazy var cardView: CardView = {
         let view = CardView()
@@ -59,8 +65,13 @@ class MainVC: UIViewController {
     
     private func setupViews() {
         [
+            backView,
             cardView
         ].forEach { view.addSubview($0) }
+        
+        backView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         
         cardView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(32.0)
@@ -71,7 +82,7 @@ class MainVC: UIViewController {
     }
 }
 
-extension MainVC {
+extension HomeVC {
     func bindData() {
         cardView.profileCardView.nftView.image = UIImage(named: "DummyNFT")
         cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")

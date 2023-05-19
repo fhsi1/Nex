@@ -10,25 +10,9 @@ import SnapKit
 
 final class TabBarVC: UITabBarController {
     
-    lazy var mainVC: UINavigationController =  {
-        let vc = UINavigationController(rootViewController: MainVC())
+    lazy var homeVC: UINavigationController =  {
+        let vc = UINavigationController(rootViewController: HomeVC())
         let tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), selectedImage: UIImage(named: "selectedHome"))
-        vc.tabBarItem = tabBarItem
-        
-        return vc
-    }()
-    
-    lazy var communityVC: UIViewController =  {
-        let vc = UINavigationController(rootViewController: CommunityVC())
-        let tabBarItem = UITabBarItem(title: "Community", image: UIImage(systemName: "suit.heart"), selectedImage: UIImage(systemName: "suit.heart"))
-        vc.tabBarItem = tabBarItem
-        
-        return vc
-    }()
-    
-    lazy var rankVC: UIViewController =  {
-        let vc = UINavigationController(rootViewController: RankVC())
-        let tabBarItem = UITabBarItem(title: "Ranking", image: UIImage(systemName: "person.crop.circle"), selectedImage: UIImage(systemName: "person.crop.circle"))
         vc.tabBarItem = tabBarItem
         
         return vc
@@ -36,7 +20,15 @@ final class TabBarVC: UITabBarController {
     
     lazy var eventVC: UIViewController =  {
         let vc = UINavigationController(rootViewController: EventVC())
-        let tabBarItem = UITabBarItem(title: "Event", image: UIImage(systemName: "suit.heart"), selectedImage: UIImage(systemName: "suit.heart"))
+        let tabBarItem = UITabBarItem(title: "Event", image: UIImage(named: "event"), selectedImage: UIImage(named: "selectedEvent"))
+        vc.tabBarItem = tabBarItem
+        
+        return vc
+    }()
+    
+    lazy var accountVC: UIViewController =  {
+        let vc = UINavigationController(rootViewController: AccountVC())
+        let tabBarItem = UITabBarItem(title: "Account", image: UIImage(named: "account"), selectedImage: UIImage(named: "selectedAccount"))
         vc.tabBarItem = tabBarItem
         
         return vc
@@ -59,10 +51,9 @@ final class TabBarVC: UITabBarController {
         tabBar.layer.cornerRadius = 15.0
         
         viewControllers = [
-            mainVC,
-            communityVC,
-            rankVC,
-            eventVC
+            homeVC,
+            eventVC,
+            accountVC
         ]
     }
 }

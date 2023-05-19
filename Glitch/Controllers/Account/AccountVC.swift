@@ -1,5 +1,5 @@
 //
-//  RankVC.swift
+//  CommunityVC.swift
 //  Glitch
 //
 //  Created by Yujean Cho on 2023/05/13.
@@ -8,7 +8,14 @@
 import Foundation
 import UIKit
 
-class RankVC: UIViewController {
+class AccountVC: UIViewController {
+    
+    private lazy var backView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "BackView")
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .nDarkBlack
@@ -19,14 +26,18 @@ class RankVC: UIViewController {
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "순위"
+        navigationItem.title = ""
         
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.nWhite!]
     }
     
     private func setupViews() {
         [
-            
+            backView
         ].forEach { view.addSubview($0) }
+        
+        backView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }
