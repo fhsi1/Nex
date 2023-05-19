@@ -55,8 +55,6 @@ class MainVC: UIViewController {
         
         setupViews()
         bindData()
-        
-        print("왜안돼!")
     }
     
     private func setupViews() {

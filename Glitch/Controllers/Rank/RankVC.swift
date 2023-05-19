@@ -11,6 +11,7 @@ import UIKit
 class RankVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .nDarkBlack
         
         setupNavigationBar()
         setupViews()
@@ -19,6 +20,8 @@ class RankVC: UIViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "순위"
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.nWhite!]
     }
     
     private func setupViews() {
