@@ -51,9 +51,12 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .nDarkBlack
         
         setupViews()
         bindData()
+        
+        print("왜안돼!")
     }
     
     private func setupViews() {
@@ -62,17 +65,17 @@ class MainVC: UIViewController {
         ].forEach { view.addSubview($0) }
         
         cardView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
+            $0.leading.equalToSuperview().inset(32.0)
+            $0.trailing.equalToSuperview().inset(31.0)
+            $0.height.equalTo(540.0)
             $0.centerY.equalToSuperview()
-            $0.height.equalTo(450.0)
-            $0.width.equalTo(300.0)
         }
     }
 }
 
 extension MainVC {
     func bindData() {
-        cardView.profileCardView.ntfView.image = UIImage(named: "ProfileDummy")
-        cardView.qrCardView.qrView.image = UIImage(named: "QRDummy")
+        cardView.profileCardView.nftView.image = UIImage(named: "DummyNFT")
+        cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
     }
 }
