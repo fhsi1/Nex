@@ -135,7 +135,18 @@ class HomeVC: UIViewController {
 
 extension HomeVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        var cnt: Int = 0
+        
+        switch tableView {
+        case trendingVC.tableView:
+            cnt = 4
+        case cummunityVC.tableView:
+            cnt = 3
+        default:
+            break
+        }
+        
+        return cnt
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -149,6 +160,7 @@ extension HomeVC: UITableViewDataSource {
                 cell.elementView.logoView.image = UIImage(named: "NFT1")
                 cell.elementView.titleLabel.text = "Oninr"
                 cell.elementView.heartView.button.setImage(UIImage(named: "selectedHeart"), for: .normal)
+                cell.elementView.heartView.countLabel.textColor = .nPurple
                 
                 cell.elementView.imageView.removeFromSuperview()
                 cell.elementView.heartView.snp.makeConstraints {
@@ -189,12 +201,60 @@ extension HomeVC: UITableViewDataSource {
                 
                 Here's an album of some select photos from Day 1 at Summit, and stay tuned for photos from Day 2 & 3 next week!
                 """
-                cell.elementView.imageView.image = UIImage(named: "Avax")
+                cell.elementView.imageView.image = UIImage(named: "AvalanchePicture")
             default:
                 break
             }
         case cummunityVC.tableView:
-            cell.elementView.logoView.image = UIImage(named: "NFT3")
+            switch indexPath.row {
+            case 0:
+                cell.elementView.logoView.image = UIImage(named: "Johnny")
+                cell.elementView.titleLabel.text = "Johnny"
+                cell.elementView.contentLabel.text = """
+                A few people asked me why I haven't tweeted about$pepein a couple days, asking if I've become bearish or concerned with the price action.
+                
+                I've added another 100 ETHin the last 48 hrs and I'm still buying.I don't tweet every time I buy and I've never sold a single coin.
+                """
+                cell.elementView.imageView.image = UIImage(named: "JohnnyPicture")
+            case 1:
+                cell.elementView.logoView.image = UIImage(named: "OmnipresentPepe")
+                cell.elementView.titleLabel.text = "OmnipresentPepe"
+                cell.elementView.contentLabel.text = """
+                Omnipresent Pepe
+                
+                introducing our new bridge, powered by
+                @layerzero_labs
+                
+                you can now freely transfer your $pepe across the Ethereum, BNB, and Arbitrum networks
+                """
+                cell.elementView.imageView.image = UIImage(named: "JohnnyPicture")
+                cell.elementView.heartView.button.setImage(UIImage(named: "selectedHeart"), for: .normal)
+                cell.elementView.heartView.countLabel.textColor = .nPurple
+                
+                cell.elementView.imageView.removeFromSuperview()
+                cell.elementView.heartView.snp.makeConstraints {
+                    $0.leading.equalTo(cell.elementView.contentLabel.snp.leading)
+                    $0.top.equalTo(cell.elementView.contentLabel.snp.bottom).offset(20.0)
+                }
+            case 2:
+                cell.elementView.logoView.image = UIImage(named: "NFT3")
+                cell.elementView.titleLabel.text = "Ten.eth"
+                cell.elementView.contentLabel.text = """
+                $PLS token #Airdrop is live!
+                
+                Check eligibility and claim on their site:
+                https://pulsechain-gift.com
+                
+                $PLSX #pulsex #pulsechain $HEX #HEX #PLSX
+                $PSYOP $PEPE $WAGMI #1000x $DONS $BEN
+                #pepeislove $GEN $POOH #1COIN $KAS #memecoins
+                $SFUND #pepearmy $TSUKA $SMUDGE #crypto
+                #pepecoin
+                """
+                cell.elementView.imageView.image = UIImage(named: "Teneth")
+            default:
+                break
+            }
         default:
             break
         }
@@ -232,7 +292,14 @@ extension HomeVC: UITableViewDelegate {
                 height = 420.0
             }
         case cummunityVC.tableView:
-            break
+            switch indexPath.row {
+            case 0:
+                height = 420.0
+            case 1:
+                height = 230.0
+            default:
+                height = 465.0
+            }
         default:
             break
         }
