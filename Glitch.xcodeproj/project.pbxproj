@@ -65,6 +65,7 @@
 		105196F52A18D74A0070CBBE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 105196F42A18D74A0070CBBE /* Lottie */; };
 		105196F82A18D7C00070CBBE /* party.json in Resources */ = {isa = PBXBuildFile; fileRef = 105196F72A18D7C00070CBBE /* party.json */; };
 		105196FB2A18DA060070CBBE /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196FA2A18DA060070CBBE /* ProfileVC.swift */; };
+		1051970B2A192EF20070CBBE /* web3swift in Frameworks */ = {isa = PBXBuildFile; productRef = 1051970A2A192EF20070CBBE /* web3swift */; };
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
@@ -142,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1041C69229FE486C00836EEB /* RxMoya in Frameworks */,
+				1051970B2A192EF20070CBBE /* web3swift in Frameworks */,
 				1041C68C29FE486C00836EEB /* CombineMoya in Frameworks */,
 				1041C69029FE486C00836EEB /* ReactiveMoya in Frameworks */,
 				1041C68629FE47C700836EEB /* SnapKit in Frameworks */,
@@ -434,6 +436,7 @@
 				1041C68F29FE486C00836EEB /* ReactiveMoya */,
 				1041C69129FE486C00836EEB /* RxMoya */,
 				105196F42A18D74A0070CBBE /* Lottie */,
+				1051970A2A192EF20070CBBE /* web3swift */,
 			);
 			productName = Glitch;
 			productReference = 1041C66D29FE45C400836EEB /* Glitch.app */;
@@ -467,6 +470,7 @@
 				1041C68429FE47C700836EEB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1041C68A29FE486C00836EEB /* XCRemoteSwiftPackageReference "Moya" */,
 				105196F32A18D74A0070CBBE /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				105197092A192EF20070CBBE /* XCRemoteSwiftPackageReference "web3swift" */,
 			);
 			productRefGroup = 1041C66E29FE45C400836EEB /* Products */;
 			projectDirPath = "";
@@ -785,6 +789,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		105197092A192EF20070CBBE /* XCRemoteSwiftPackageReference "web3swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/web3swift-team/web3swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -817,6 +829,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 105196F32A18D74A0070CBBE /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		1051970A2A192EF20070CBBE /* web3swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 105197092A192EF20070CBBE /* XCRemoteSwiftPackageReference "web3swift" */;
+			productName = web3swift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
