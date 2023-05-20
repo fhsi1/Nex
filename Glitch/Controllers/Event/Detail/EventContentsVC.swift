@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Moya
 import Lottie
+import KeychainSwift
 
 class EventContentsVC: UIViewController {
     
@@ -73,6 +74,7 @@ class EventContentsVC: UIViewController {
 
 extension EventContentsVC {
     func requestEvent() {
+        let keychain = KeychainSwift()
         let provider = MoyaProvider<APIService>()
         
         let json = [
@@ -82,8 +84,20 @@ extension EventContentsVC {
         
         provider.request(.event(request: json)) { result in
             switch result {
-            case .success:
+            case .success(let response):
                 print("✅ success")
+                
+                do {
+                    let responseObject = try JSONDecoder().decode(EventResponse.self, from: response.data)
+                    
+                    keychain.set(responseObject.externalURL, forKey: "externalURL")
+                    
+                    print(responseObject.externalURL)
+                    
+                } catch {
+                    print(error)
+                }
+                
                 let vc = UpdateNFTVC()
                 
                 vc.modalPresentationStyle = .overCurrentContext

@@ -17,7 +17,7 @@ enum APIService {
 
 extension APIService: TargetType {
     var baseURL: URL {
-        let urlString = "https://229e-121-142-8-66.jp.ngrok.io"
+        let urlString = "https://a47a-121-142-8-66.jp.ngrok.io"
         guard let url = URL(string: urlString) else { fatalError() }
         return url
     }

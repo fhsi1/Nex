@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+import SnapKit
+import KeychainSwift
+import Kingfisher
 
 class AccountVC: UIViewController {
     
@@ -74,6 +77,10 @@ class AccountVC: UIViewController {
         
         setupNavigationBar()
         setupViews()
+        
+        guard let url = URL(string: KeychainSwift().get("externalURL") ?? "") else { return }
+        
+        profileVC.cardView.profileCardView.nftView.kf.setImage(with: url)
     }
     
     private func setupNavigationBar() {
@@ -137,6 +144,11 @@ extension AccountVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as! TrendingTableViewCell
         
         cell.elementView.logoView.image = UIImage(named: "NFT3")
+        
+        if let url = URL(string: KeychainSwift().get("externalURL") ?? "") {
+            cell.elementView.logoView.kf.setImage(with: url)
+        }
+        
         cell.elementView.titleLabel.text = "Nex"
         
         cell.elementView.imageView.removeFromSuperview()

@@ -73,6 +73,9 @@
 		10794EB72A19630B005CA258 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EB62A19630B005CA258 /* Encodable+.swift */; };
 		10794EB92A196B2E005CA258 /* EventContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EB82A196B2E005CA258 /* EventContentsVC.swift */; };
 		10794EBB2A197426005CA258 /* eventCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = 10794EBA2A197426005CA258 /* eventCheck.json */; };
+		10794EBE2A197A97005CA258 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 10794EBD2A197A97005CA258 /* Kingfisher */; };
+		10794EC02A197BD6005CA258 /* EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EBF2A197BD6005CA258 /* EventResponse.swift */; };
+		10794EC32A197D22005CA258 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 10794EC22A197D22005CA258 /* KeychainSwift */; };
 		10AFB4342A0F533600F23794 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4332A0F533600F23794 /* HomeVC.swift */; };
 		10AFB4362A0F535400F23794 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4352A0F535400F23794 /* AccountVC.swift */; };
 		10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4392A0F538900F23794 /* EventVC.swift */; };
@@ -140,6 +143,7 @@
 		10794EB62A19630B005CA258 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		10794EB82A196B2E005CA258 /* EventContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentsVC.swift; sourceTree = "<group>"; };
 		10794EBA2A197426005CA258 /* eventCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eventCheck.json; sourceTree = "<group>"; };
+		10794EBF2A197BD6005CA258 /* EventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResponse.swift; sourceTree = "<group>"; };
 		10AFB4332A0F533600F23794 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		10AFB4352A0F535400F23794 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		10AFB4392A0F538900F23794 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
@@ -150,10 +154,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10794EC32A197D22005CA258 /* KeychainSwift in Frameworks */,
 				1041C69229FE486C00836EEB /* RxMoya in Frameworks */,
 				1051970B2A192EF20070CBBE /* web3swift in Frameworks */,
 				1041C68C29FE486C00836EEB /* CombineMoya in Frameworks */,
 				1041C69029FE486C00836EEB /* ReactiveMoya in Frameworks */,
+				10794EBE2A197A97005CA258 /* Kingfisher in Frameworks */,
 				1041C68629FE47C700836EEB /* SnapKit in Frameworks */,
 				1041C68E29FE486C00836EEB /* Moya in Frameworks */,
 				105196F52A18D74A0070CBBE /* Lottie in Frameworks */,
@@ -383,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				10794EB32A1960ED005CA258 /* APIService.swift */,
+				10794EBF2A197BD6005CA258 /* EventResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -449,6 +456,8 @@
 				1041C69129FE486C00836EEB /* RxMoya */,
 				105196F42A18D74A0070CBBE /* Lottie */,
 				1051970A2A192EF20070CBBE /* web3swift */,
+				10794EBD2A197A97005CA258 /* Kingfisher */,
+				10794EC22A197D22005CA258 /* KeychainSwift */,
 			);
 			productName = Glitch;
 			productReference = 1041C66D29FE45C400836EEB /* Glitch.app */;
@@ -483,6 +492,8 @@
 				1041C68A29FE486C00836EEB /* XCRemoteSwiftPackageReference "Moya" */,
 				105196F32A18D74A0070CBBE /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				105197092A192EF20070CBBE /* XCRemoteSwiftPackageReference "web3swift" */,
+				10794EBC2A197A97005CA258 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				10794EC12A197D22005CA258 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 1041C66E29FE45C400836EEB /* Products */;
 			projectDirPath = "";
@@ -566,6 +577,7 @@
 				105196EF2A18BFFE0070CBBE /* EventDetailHalfVC.swift in Sources */,
 				106C29102A1086F200E0F78E /* CardView.swift in Sources */,
 				105196FB2A18DA060070CBBE /* ProfileVC.swift in Sources */,
+				10794EC02A197BD6005CA258 /* EventResponse.swift in Sources */,
 				105196D12A17DEB60070CBBE /* TrendingTableViewCell.swift in Sources */,
 				105196972A178E5D0070CBBE /* halfCircleRightView.swift in Sources */,
 				10794EB92A196B2E005CA258 /* EventContentsVC.swift in Sources */,
@@ -813,6 +825,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		10794EBC2A197A97005CA258 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		10794EC12A197D22005CA258 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -850,6 +878,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 105197092A192EF20070CBBE /* XCRemoteSwiftPackageReference "web3swift" */;
 			productName = web3swift;
+		};
+		10794EBD2A197A97005CA258 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10794EBC2A197A97005CA258 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		10794EC22A197D22005CA258 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10794EC12A197D22005CA258 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

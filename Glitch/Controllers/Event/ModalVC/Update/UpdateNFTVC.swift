@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import SnapKit
 import Lottie
+import KeychainSwift
+import Kingfisher
 
 class UpdateNFTVC: UIViewController {
     lazy var alertBackView: UIView = {
@@ -67,6 +69,10 @@ class UpdateNFTVC: UIViewController {
         setupViews()
         
         animationView.play()
+        
+        guard let url = URL(string: KeychainSwift().get("externalURL") ?? "") else { return }
+        
+        nftView.kf.setImage(with: url)
     }
     
     private func setupViews() {
