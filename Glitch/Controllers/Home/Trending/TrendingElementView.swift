@@ -15,6 +15,7 @@ class TrendingElementView: UIView {
         let view = UIImageView()
         view.layer.cornerRadius = 4.0
         view.image = UIImage(named: "DummyLogo")
+        view.clipsToBounds = true
         return view
     }()
     
@@ -49,6 +50,13 @@ class TrendingElementView: UIView {
         label.numberOfLines = 0
         label.font = UIFont(name: "Inter-Regular", size: 12)
         return label
+    }()
+    
+    lazy var imageView: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = 8.0
+        view.backgroundColor = .systemBlue
+        return view
     }()
     
     lazy var heartView: StatusButtonView = {
@@ -88,6 +96,7 @@ class TrendingElementView: UIView {
             logoView,
             stackView,
             contentLabel,
+            imageView,
             heartView,
             commentView
         ].forEach { addSubview($0) }
@@ -107,12 +116,20 @@ class TrendingElementView: UIView {
         contentLabel.snp.makeConstraints {
             $0.leading.equalTo(logoView.snp.leading)
             $0.top.equalTo(logoView.snp.bottom).offset(12.0)
+            $0.trailing.equalToSuperview().inset(16.0)
+        }
+        
+        imageView.snp.makeConstraints {
+            $0.top.equalTo(contentLabel.snp.bottom).offset(20.0)
+            $0.leading.equalTo(contentLabel.snp.leading)
+            $0.trailing.equalTo(contentLabel.snp.trailing)
+            $0.height.equalTo(170.0)
         }
         
         heartView.snp.makeConstraints {
             $0.leading.equalTo(contentLabel.snp.leading)
             $0.height.equalTo(16.0)
-            $0.top.equalTo(contentLabel.snp.bottom).offset(20.0)
+            $0.top.equalTo(imageView.snp.bottom).offset(20.0)
             $0.width.equalTo(37.34)
         }
         

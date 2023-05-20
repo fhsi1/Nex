@@ -19,7 +19,7 @@ final class TabBarVC: UITabBarController {
     }()
     
     lazy var eventVC: UIViewController =  {
-        let vc = UINavigationController(rootViewController: TrendingVC())
+        let vc = UINavigationController(rootViewController: EventVC())
         let tabBarItem = UITabBarItem(title: "Event", image: UIImage(named: "event"), selectedImage: UIImage(named: "selectedEvent"))
         vc.tabBarItem = tabBarItem
         

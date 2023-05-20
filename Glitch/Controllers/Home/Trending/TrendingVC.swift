@@ -18,12 +18,7 @@ class TrendingVC: UIViewController {
     
     lazy var tableView: UITableView = {
         let view = UITableView()
-        view.rowHeight = 248.0
-        
-//        view.dataSource = self
-        
-//        view.register(TrendingTableViewCell.self, forCellReuseIdentifier: "TrendingTableViewCell")
-        
+        view.rowHeight = 440.0
         view.backgroundColor = .clear
         
         return view

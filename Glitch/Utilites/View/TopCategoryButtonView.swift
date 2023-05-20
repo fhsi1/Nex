@@ -16,7 +16,6 @@ class TopCategroyButtonView: UIView {
         button.setTitle("Profile", for: .normal)
         button.setTitleColor(.nWhite, for: .normal)
         button.titleLabel?.font = UIFont(name: "Inter-Bold", size: 24)
-//        button.addTarget(self, action: #selector(firstSelected), for: .touchUpInside)
         return button
     }()
     
@@ -25,7 +24,6 @@ class TopCategroyButtonView: UIView {
         button.setTitle("Contents", for: .normal)
         button.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
         button.titleLabel?.font = UIFont(name: "Inter-Bold", size: 24)
-//        button.addTarget(self, action: #selector(secondSelected), for: .touchUpInside)
         return button
     }()
     
@@ -58,15 +56,3 @@ class TopCategroyButtonView: UIView {
         }
     }
 }
-
-//extension TopCategroyButtonView {
-//    @objc func firstSelected() {
-//        firstButton.setTitleColor(.nWhite, for: .normal)
-//        secondButton.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
-//    }
-//    
-//    @objc func secondSelected() {
-//        secondButton.setTitleColor(.nWhite, for: .normal)
-//        firstButton.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
-//    }
-//}
