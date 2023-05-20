@@ -14,6 +14,7 @@ class EventDetailHalfVC: UIViewController {
     lazy var closeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "close"), for: .normal)
+        button.addTarget(self, action: #selector(tappedCloseButton), for: .touchUpInside)
         return button
     }()
     
@@ -52,6 +53,10 @@ class EventDetailHalfVC: UIViewController {
         button.layer.cornerRadius = 8.0
         return button
     }()
+    
+    @objc func tappedCloseButton() {
+        dismiss(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

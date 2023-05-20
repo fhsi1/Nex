@@ -24,6 +24,7 @@ class EventVC: UIViewController {
         view.register(EventTableViewCell.self, forCellReuseIdentifier: "EventTableViewCell")
         
         view.dataSource = self
+        view.delegate = self
         return view
     }()
     
@@ -117,5 +118,27 @@ extension EventVC: UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+}
+
+extension EventVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = EventDetailHalfVC()
+        
+        vc.modalPresentationStyle = .pageSheet
+        
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [
+                .custom { _ in
+                    return 340.0
+                }
+            ]
+            
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            
+            sheet.preferredCornerRadius = 24.0
+        }
+        
+        present(vc, animated: true)
     }
 }
