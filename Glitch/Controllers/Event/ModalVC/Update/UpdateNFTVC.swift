@@ -21,6 +21,7 @@ class UpdateNFTVC: UIViewController {
     lazy var closeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "close"), for: .normal)
+        button.addTarget(self, action: #selector(tappedCloseButton), for: .touchUpInside)
         return button
     }()
     
@@ -56,9 +57,12 @@ class UpdateNFTVC: UIViewController {
         return view
     }()
     
+    @objc func tappedCloseButton() {
+        dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0.61, green: 0.64, blue: 0.71, alpha: 0.60)
         
         setupViews()
         
@@ -68,9 +72,9 @@ class UpdateNFTVC: UIViewController {
     private func setupViews() {
         [
             alertBackView,
-            closeButton,
             titleLabel,
             animationView,
+            closeButton,
             nftView
         ].forEach { view.addSubview($0) }
         
@@ -84,6 +88,8 @@ class UpdateNFTVC: UIViewController {
         closeButton.snp.makeConstraints {
             $0.top.equalTo(alertBackView.snp.top).inset(20.0)
             $0.trailing.equalTo(alertBackView.snp.trailing).inset(20.0)
+            $0.height.equalTo(24.0)
+            $0.width.equalTo(closeButton.snp.height)
         }
         
         titleLabel.snp.makeConstraints {

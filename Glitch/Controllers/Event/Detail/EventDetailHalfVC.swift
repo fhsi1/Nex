@@ -51,11 +51,21 @@ class EventDetailHalfVC: UIViewController {
         button.setTitleColor(.nWhite, for: .normal)
         button.backgroundColor = .nPurple
         button.layer.cornerRadius = 8.0
+        button.addTarget(self, action: #selector(tappedActionButton), for: .touchUpInside)
         return button
     }()
     
     @objc func tappedCloseButton() {
         dismiss(animated: true)
+    }
+    
+    @objc func tappedActionButton() {
+        let vc = EventContentsVC()
+        guard let pvc = self.presentingViewController else { return }
+
+        self.dismiss(animated: true) {
+          pvc.present(vc, animated: true, completion: nil)
+        }
     }
     
     override func viewDidLoad() {

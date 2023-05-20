@@ -71,6 +71,8 @@
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
 		10794EB42A1960ED005CA258 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EB32A1960ED005CA258 /* APIService.swift */; };
 		10794EB72A19630B005CA258 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EB62A19630B005CA258 /* Encodable+.swift */; };
+		10794EB92A196B2E005CA258 /* EventContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EB82A196B2E005CA258 /* EventContentsVC.swift */; };
+		10794EBB2A197426005CA258 /* eventCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = 10794EBA2A197426005CA258 /* eventCheck.json */; };
 		10AFB4342A0F533600F23794 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4332A0F533600F23794 /* HomeVC.swift */; };
 		10AFB4362A0F535400F23794 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4352A0F535400F23794 /* AccountVC.swift */; };
 		10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4392A0F538900F23794 /* EventVC.swift */; };
@@ -136,6 +138,8 @@
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
 		10794EB32A1960ED005CA258 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		10794EB62A19630B005CA258 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		10794EB82A196B2E005CA258 /* EventContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentsVC.swift; sourceTree = "<group>"; };
+		10794EBA2A197426005CA258 /* eventCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eventCheck.json; sourceTree = "<group>"; };
 		10AFB4332A0F533600F23794 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		10AFB4352A0F535400F23794 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		10AFB4392A0F538900F23794 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
@@ -315,12 +319,13 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
-		105196ED2A18BFE10070CBBE /* HalfVC */ = {
+		105196ED2A18BFE10070CBBE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */,
+				10794EB82A196B2E005CA258 /* EventContentsVC.swift */,
 			);
-			path = HalfVC;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		105196F02A18D13E0070CBBE /* Update */ = {
@@ -335,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				105196F72A18D7C00070CBBE /* party.json */,
+				10794EBA2A197426005CA258 /* eventCheck.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -413,7 +419,7 @@
 				10AFB4392A0F538900F23794 /* EventVC.swift */,
 				105196E72A18B2F20070CBBE /* EventTableViewCell.swift */,
 				105196E92A18B4AE0070CBBE /* EventElementView.swift */,
-				105196ED2A18BFE10070CBBE /* HalfVC */,
+				105196ED2A18BFE10070CBBE /* Detail */,
 				104BF2BD2A10E96800EFA7A4 /* ModalVC */,
 			);
 			path = Event;
@@ -502,6 +508,7 @@
 				105196BF2A1790DB0070CBBE /* Roboto-BlackItalic.ttf in Resources */,
 				105196AA2A1790C60070CBBE /* Inter-Regular.ttf in Resources */,
 				105196AE2A1790C60070CBBE /* Inter-Bold.ttf in Resources */,
+				10794EBB2A197426005CA258 /* eventCheck.json in Resources */,
 				105196AD2A1790C60070CBBE /* Inter-ExtraBold.ttf in Resources */,
 				105196C32A1790DB0070CBBE /* Roboto-Medium.ttf in Resources */,
 				105196C82A1790DB0070CBBE /* Roboto-LightItalic.ttf in Resources */,
@@ -561,6 +568,7 @@
 				105196FB2A18DA060070CBBE /* ProfileVC.swift in Sources */,
 				105196D12A17DEB60070CBBE /* TrendingTableViewCell.swift in Sources */,
 				105196972A178E5D0070CBBE /* halfCircleRightView.swift in Sources */,
+				10794EB92A196B2E005CA258 /* EventContentsVC.swift in Sources */,
 				10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
