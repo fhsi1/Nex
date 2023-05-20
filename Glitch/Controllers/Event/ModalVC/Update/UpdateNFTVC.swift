@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import Lottie
 
 class UpdateNFTVC: UIViewController {
     lazy var alertBackView: UIView = {
@@ -36,6 +37,11 @@ class UpdateNFTVC: UIViewController {
         return label
     }()
     
+    lazy var animationView: LottieAnimationView = {
+        let view = LottieAnimationView(name: "party")
+        return view
+    }()
+    
     lazy var nftView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "DummyNFT")
@@ -48,6 +54,8 @@ class UpdateNFTVC: UIViewController {
         view.backgroundColor = UIColor(red: 0.61, green: 0.64, blue: 0.71, alpha: 0.60)
         
         setupViews()
+        
+        animationView.play()
     }
     
     private func setupViews() {
@@ -55,6 +63,7 @@ class UpdateNFTVC: UIViewController {
             alertBackView,
             closeButton,
             titleLabel,
+            animationView,
             nftView
         ].forEach { view.addSubview($0) }
         
@@ -73,7 +82,12 @@ class UpdateNFTVC: UIViewController {
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(alertBackView.snp.top).inset(63.0)
             $0.centerX.equalTo(alertBackView.snp.centerX)
-
+        }
+        
+        animationView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.width.equalTo(375.0)
+            $0.height.equalTo(375.0)
         }
         
         nftView.snp.makeConstraints {
