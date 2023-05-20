@@ -48,6 +48,7 @@ class AccountVC: UIViewController {
         vc.tableView.register(TrendingTableViewCell.self, forCellReuseIdentifier: "TrendingTableViewCell")
         
         vc.tableView.dataSource = self
+        vc.tableView.delegate = self
         return vc
     }()
     
@@ -128,15 +129,91 @@ class AccountVC: UIViewController {
 
 extension AccountVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as! TrendingTableViewCell
         
+        cell.elementView.logoView.image = UIImage(named: "NFT3")
+        cell.elementView.titleLabel.text = "Nex"
+        
+        cell.elementView.imageView.removeFromSuperview()
+        cell.elementView.heartView.snp.makeConstraints {
+            $0.leading.equalTo(cell.elementView.contentLabel.snp.leading)
+            $0.top.equalTo(cell.elementView.contentLabel.snp.bottom).offset(20.0)
+        }
+        
+        let moreButton: UIButton = {
+            let button = UIButton()
+            button.setImage(UIImage(named: "more"), for: .normal)
+            return button
+        }()
+        
+        cell.elementView.addSubview(moreButton)
+        
+        moreButton.snp.makeConstraints {
+            $0.top.equalTo(cell.elementView.snp.top).inset(21.0)
+            $0.trailing.equalTo(cell.elementView.snp.trailing).inset(16.0)
+        }
+        
+        switch indexPath.row {
+        case 0:
+            cell.elementView.typeLabel.text = "Space"
+            cell.elementView.contentLabel.text = """
+            DeBank Airdrop Guide
+            
+            @DeBankDeFi
+            raised over $25M from Sequoia, DragonFly, Coinbase
+            Ventures and other VCs 🪂
+            
+            Don't miss your chance to position yourself for a
+            potential DeBank airdrop.
+            """
+        case 1:
+            cell.elementView.typeLabel.text = "Ronin"
+            cell.elementView.contentLabel.text = """
+            My friend gave me a space light and my room is a
+            chaotic multiverse
+            """
+        case 2:
+            cell.elementView.typeLabel.text = "MEME"
+            cell.elementView.contentLabel.text = """
+            No more data theft!
+            your data = your icome 🤑 
+            #HUDltoken is LIVE ON #BNBchain
+
+            CONTRACT:
+            1edwq09w3980129813hd9102910293sdasd092
+            #PancakeSwap
+            """
+        default:
+            break
+        }
+        
         cell.selectionStyle = .none
         
         return cell
+    }
+}
+
+extension AccountVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        var height: CGFloat = 0.0
+        
+        switch indexPath.row {
+        case 0:
+            height = 260.0
+        case 1:
+            height = 160.0
+        case 2:
+            height = 248.0
+        default:
+            break
+        }
+        
+        return height
     }
 }

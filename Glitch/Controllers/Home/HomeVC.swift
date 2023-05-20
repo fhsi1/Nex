@@ -195,7 +195,8 @@ extension HomeVC: UITableViewDataSource {
             case 3:
                 cell.elementView.logoView.image = UIImage(named: "Avalanche")
                 cell.elementView.titleLabel.text = "Avalanche"
-                cell.elementView.typeLabel.text = "CSTW"
+                cell.elementView.typeLabel.removeFromSuperview()
+                cell.elementView.divider.removeFromSuperview()
                 cell.elementView.contentLabel.text = """
                 This year's Avalanche Summit showcased the innovation, passion, talent and growth of the Avalanche ecosystem and the community
                 
