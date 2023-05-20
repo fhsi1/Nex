@@ -63,10 +63,28 @@ class TrendingDetailVC: UIViewController {
         return view
     }()
     
+    @objc func tappedBackButton() {
+        print("tappedBackButton")
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         setupViews()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.isHidden = false
+        
+        let backIcon = UIImage(named: "leftArrow")?.withRenderingMode(.alwaysOriginal)
+        
+        let leftBarButtonItem = UIBarButtonItem(image: backIcon, style: .plain, target: self, action: #selector(tappedBackButton))
+        
+        self.navigationItem.leftBarButtonItems = [leftBarButtonItem]
     }
     
     private func setupViews() {

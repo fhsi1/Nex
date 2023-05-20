@@ -16,93 +16,127 @@ class AccountVC: UIViewController {
         return view
     }()
     
-    lazy var cardView: CardView = {
-        let view = CardView()
-        
-        [
-            view.profileCardView.backButtonView,
-            view.qrCardView.backButtonView
-        ].forEach { $0.addTarget(self, action: #selector(flip), for: .touchUpInside) }
-        
-        return view
-    }()
-    
-    lazy var editProfileButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("프로필 편집", for: .normal)
-        button.setTitleColor(UIColor(red: 0.467, green: 0.467, blue: 0.467, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 0.958, green: 0.958, blue: 0.958, alpha: 1)
-        button.layer.cornerRadius = 13.0
-        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
+    lazy var titleButtonView: TopCategroyButtonView = {
+        let button = TopCategroyButtonView()
+        button.firstButton.setTitle("Profile", for: .normal)
+        button.secondButton.setTitle("Contents", for: .normal)
+        button.firstButton.addTarget(self, action: #selector(tappedTrendingButton), for: .touchUpInside)
+        button.secondButton.addTarget(self, action: #selector(tappedCommunityButton), for: .touchUpInside)
         return button
     }()
     
-    @objc func flip(_ sender: CardView) {
-        let transitionOptions: UIView.AnimationOptions = [
-            .transitionFlipFromRight,
-            .showHideTransitionViews
-        ]
+    lazy var contentView1: UIView = {
+        let view = UIView()
+        view.isHidden = false
+        return view
+    }()
+    
+    lazy var contentView2: UIView = {
+        let view = UIView()
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var profileVC: ProfileVC = {
+        let vc = ProfileVC()
+        return vc
+    }()
+    
+    lazy var contentsVC: TrendingVC = {
+        let vc = TrendingVC()
         
-        if sender == cardView.profileCardView.backButtonView {
-            UIView.transition(
-                with: cardView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    self.cardView.profileCardView.isHidden = true
-                    self.cardView.qrCardView.isHidden = false
-            })
-        } else {
-            UIView.transition(
-                with: cardView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    self.cardView.profileCardView.isHidden = false
-                    self.cardView.qrCardView.isHidden = true
-            })
-        }
+        vc.tableView.register(TrendingTableViewCell.self, forCellReuseIdentifier: "TrendingTableViewCell")
+        
+        vc.tableView.dataSource = self
+        return vc
+    }()
+    
+    @objc func tappedTrendingButton() {
+        titleButtonView.firstButton.setTitleColor(.nWhite, for: .normal)
+        titleButtonView.secondButton.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
+        
+        contentView1.isHidden = false
+        contentView2.isHidden = true
+    }
+    
+    @objc func tappedCommunityButton() {
+        titleButtonView.firstButton.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
+        titleButtonView.secondButton.setTitleColor(.nWhite, for: .normal)
+        
+        contentView2.isHidden = false
+        contentView1.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .nDarkBlack
         
+        setupNavigationBar()
         setupViews()
-        bindData()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupViews() {
+        
+        addChild(profileVC)
+        profileVC.view.frame = contentView1.frame
+        contentView1.addSubview(profileVC.view)
+        profileVC.didMove(toParent: self)
+
+        addChild(contentsVC)
+        contentsVC.view.frame = contentView2.frame
+        contentView2.addSubview(contentsVC.view)
+        contentsVC.didMove(toParent: self)
+        
         [
             backView,
-            cardView
+            titleButtonView,
+            contentView1,
+            contentView2
         ].forEach { view.addSubview($0) }
-        
-        cardView.profileCardView.addSubview(editProfileButton)
         
         backView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
-        cardView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(32.0)
-            $0.trailing.equalToSuperview().inset(31.0)
-            $0.height.equalTo(540.0)
-            $0.centerY.equalToSuperview()
+        titleButtonView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(57.0)
+            $0.leading.equalToSuperview().inset(24.0)
+            $0.height.equalTo(29.0)
+            $0.trailing.equalToSuperview()
         }
         
-        editProfileButton.snp.makeConstraints {
-            $0.centerY.equalTo(cardView.profileCardView.nameLabel.snp.centerY)
-            $0.leading.equalTo(cardView.profileCardView.nameLabel.snp.trailing).offset(4.0)
-            $0.height.equalTo(27.0)
-            $0.width.equalTo(77.0)
+        contentView1.snp.makeConstraints {
+            $0.top.equalTo(titleButtonView.snp.bottom).offset(14.0)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        contentView2.snp.makeConstraints {
+            $0.top.equalTo(titleButtonView.snp.bottom).offset(14.0)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
 }
 
-extension AccountVC {
-    func bindData() {
-        cardView.profileCardView.nftView.image = UIImage(named: "DummyNFT")
-        cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
+
+extension AccountVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as! TrendingTableViewCell
+        
+        cell.selectionStyle = .none
+        
+        return cell
     }
 }

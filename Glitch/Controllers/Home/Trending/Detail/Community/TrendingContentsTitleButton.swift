@@ -26,7 +26,7 @@ class TrendingContentsTitleButton: UIView {
     
     lazy var arrowView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "arrow")
+        view.image = UIImage(named: "rightArrow")
         return view
     }()
     

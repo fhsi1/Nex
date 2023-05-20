@@ -1,5 +1,5 @@
 //
-//  TrendingProfileView.swift
+//  ProfileVC.swift
 //  Glitch
 //
 //  Created by Yujean Cho on 2023/05/20.
@@ -9,7 +9,14 @@ import Foundation
 import UIKit
 import SnapKit
 
-class TrendingProfileView: UIView {
+class ProfileVC: UIViewController {
+    
+    private lazy var backView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "BackView")
+        return view
+    }()
+    
     lazy var cardView: CardView = {
         let view = CardView()
         
@@ -18,16 +25,19 @@ class TrendingProfileView: UIView {
             view.qrCardView.backButtonView
         ].forEach { $0.addTarget(self, action: #selector(flip), for: .touchUpInside) }
         
+        view.profileCardView.nftView.image = UIImage(named: "DummyNFT")
+        view.qrCardView.qrView.image = UIImage(named: "DummyQR")
+        
         return view
     }()
     
-    lazy var contactButton: UIButton = {
+    lazy var editProfileButton: UIButton = {
         let button = UIButton()
-        button.setTitle("연락하기", for: .normal)
-        button.setTitleColor(.nWhite, for: .normal)
-        button.backgroundColor = UIColor(red: 0.708, green: 0.708, blue: 0.708, alpha: 1)
+        button.setTitle("Edit Profile", for: .normal)
+        button.setTitleColor(UIColor(red: 0.467, green: 0.467, blue: 0.467, alpha: 1), for: .normal)
+        button.backgroundColor = UIColor(red: 0.958, green: 0.958, blue: 0.958, alpha: 1)
+        button.layer.cornerRadius = 13.0
         button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
-        button.layer.cornerRadius = 15.0
         return button
     }()
     
@@ -58,35 +68,37 @@ class TrendingProfileView: UIView {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .clear
         
         setupViews()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     private func setupViews() {
         [
+            backView,
             cardView
-        ].forEach { addSubview($0) }
+        ].forEach { view.addSubview($0) }
         
-        cardView.profileCardView.addSubview(contactButton)
+        cardView.profileCardView.addSubview(editProfileButton)
+        
+        backView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         
         cardView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(32.0)
             $0.trailing.equalToSuperview().inset(31.0)
             $0.height.equalTo(540.0)
-            $0.top.equalToSuperview().inset(70.0)
+            $0.top.equalToSuperview().inset(32.0)
         }
         
-        contactButton.snp.makeConstraints {
+        editProfileButton.snp.makeConstraints {
             $0.centerY.equalTo(cardView.profileCardView.nameLabel.snp.centerY)
-            $0.trailing.equalTo(cardView.profileCardView.snp.trailing).inset(20.0)
-            $0.width.equalTo(64.0)
+            $0.leading.equalTo(cardView.profileCardView.nameLabel.snp.trailing).offset(4.0)
             $0.height.equalTo(27.0)
+            $0.width.equalTo(75.0)
         }
     }
 }

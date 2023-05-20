@@ -64,6 +64,7 @@
 		105196F22A18D1570070CBBE /* UpdateNFTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196F12A18D1570070CBBE /* UpdateNFTVC.swift */; };
 		105196F52A18D74A0070CBBE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 105196F42A18D74A0070CBBE /* Lottie */; };
 		105196F82A18D7C00070CBBE /* party.json in Resources */ = {isa = PBXBuildFile; fileRef = 105196F72A18D7C00070CBBE /* party.json */; };
+		105196FB2A18DA060070CBBE /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196FA2A18DA060070CBBE /* ProfileVC.swift */; };
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
@@ -126,6 +127,7 @@
 		105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHalfVC.swift; sourceTree = "<group>"; };
 		105196F12A18D1570070CBBE /* UpdateNFTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNFTVC.swift; sourceTree = "<group>"; };
 		105196F72A18D7C00070CBBE /* party.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = party.json; sourceTree = "<group>"; };
+		105196FA2A18DA060070CBBE /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,14 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		105196F92A18D9B80070CBBE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				105196FA2A18DA060070CBBE /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		106C290E2A10849100E0F78E /* CardViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				10AFB4352A0F535400F23794 /* AccountVC.swift */,
+				105196F92A18D9B80070CBBE /* Profile */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -535,6 +546,7 @@
 				105196E82A18B2F20070CBBE /* EventTableViewCell.swift in Sources */,
 				105196EF2A18BFFE0070CBBE /* EventDetailHalfVC.swift in Sources */,
 				106C29102A1086F200E0F78E /* CardView.swift in Sources */,
+				105196FB2A18DA060070CBBE /* ProfileVC.swift in Sources */,
 				105196D12A17DEB60070CBBE /* TrendingTableViewCell.swift in Sources */,
 				105196972A178E5D0070CBBE /* halfCircleRightView.swift in Sources */,
 				10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */,
