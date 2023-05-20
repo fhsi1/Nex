@@ -61,6 +61,7 @@
 		105196EA2A18B4AE0070CBBE /* EventElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196E92A18B4AE0070CBBE /* EventElementView.swift */; };
 		105196EC2A18BC410070CBBE /* TopTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196EB2A18BC410070CBBE /* TopTitleLabelView.swift */; };
 		105196EF2A18BFFE0070CBBE /* EventDetailHalfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */; };
+		105196F22A18D1570070CBBE /* UpdateNFTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196F12A18D1570070CBBE /* UpdateNFTVC.swift */; };
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
@@ -121,6 +122,7 @@
 		105196E92A18B4AE0070CBBE /* EventElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventElementView.swift; sourceTree = "<group>"; };
 		105196EB2A18BC410070CBBE /* TopTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitleLabelView.swift; sourceTree = "<group>"; };
 		105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHalfVC.swift; sourceTree = "<group>"; };
+		105196F12A18D1570070CBBE /* UpdateNFTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNFTVC.swift; sourceTree = "<group>"; };
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
@@ -224,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				104BF2C22A10ECFA00EFA7A4 /* Complete */,
-				104BF2C32A10ED0C00EFA7A4 /* Update */,
+				105196F02A18D13E0070CBBE /* Update */,
 			);
 			path = ModalVC;
 			sourceTree = "<group>";
@@ -236,13 +238,6 @@
 				104BF2C02A10EA7C00EFA7A4 /* CompleteAlertView.swift */,
 			);
 			path = Complete;
-			sourceTree = "<group>";
-		};
-		104BF2C32A10ED0C00EFA7A4 /* Update */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Update;
 			sourceTree = "<group>";
 		};
 		105196912A178E220070CBBE /* View */ = {
@@ -327,6 +322,14 @@
 				105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */,
 			);
 			path = HalfVC;
+			sourceTree = "<group>";
+		};
+		105196F02A18D13E0070CBBE /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				105196F12A18D1570070CBBE /* UpdateNFTVC.swift */,
+			);
+			path = Update;
 			sourceTree = "<group>";
 		};
 		106C290E2A10849100E0F78E /* CardViews */ = {
@@ -498,6 +501,7 @@
 				1041C67129FE45C400836EEB /* AppDelegate.swift in Sources */,
 				105196CF2A17DE440070CBBE /* TrendingVC.swift in Sources */,
 				105196D72A185DA00070CBBE /* TopCategoryButtonView.swift in Sources */,
+				105196F22A18D1570070CBBE /* UpdateNFTVC.swift in Sources */,
 				105196952A178E460070CBBE /* halfCircleLeftView.swift in Sources */,
 				1051969B2A178E7C0070CBBE /* UIColor+.swift in Sources */,
 				105196E22A1870B60070CBBE /* TrendingContentsTitleButton.swift in Sources */,
