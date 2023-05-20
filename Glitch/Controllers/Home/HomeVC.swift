@@ -268,12 +268,20 @@ extension HomeVC: UITableViewDataSource {
 
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = TrendingDetailVC()
         
-        navigationController?.navigationBar.isHidden = false
-        tabBarController?.tabBar.isHidden = true
-        
-        navigationController?.pushViewController(vc, animated: true)
+        switch tableView {
+        case trendingVC.tableView:
+            let vc = TrendingDetailVC()
+            
+            navigationController?.navigationBar.isHidden = false
+            tabBarController?.tabBar.isHidden = true
+            
+            navigationController?.pushViewController(vc, animated: true)
+        case cummunityVC.tableView:
+            break
+        default:
+            break
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

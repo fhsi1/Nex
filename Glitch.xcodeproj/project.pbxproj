@@ -69,7 +69,6 @@
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
-		10794EA12A193CDE005CA258 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EA02A193CDE005CA258 /* UIScrollView+.swift */; };
 		10AFB4342A0F533600F23794 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4332A0F533600F23794 /* HomeVC.swift */; };
 		10AFB4362A0F535400F23794 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4352A0F535400F23794 /* AccountVC.swift */; };
 		10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4392A0F538900F23794 /* EventVC.swift */; };
@@ -133,7 +132,6 @@
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
-		10794EA02A193CDE005CA258 /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		10AFB4332A0F533600F23794 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		10AFB4352A0F535400F23794 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		10AFB4392A0F538900F23794 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 				105196962A178E5D0070CBBE /* halfCircleRightView.swift */,
 				105196982A178E6C0070CBBE /* InfoView.swift */,
 				1051969A2A178E7C0070CBBE /* UIColor+.swift */,
-				10794EA02A193CDE005CA258 /* UIScrollView+.swift */,
 				105196D22A17E30D0070CBBE /* statusButtonView.swift */,
 				105196D62A185DA00070CBBE /* TopCategoryButtonView.swift */,
 				105196EB2A18BC410070CBBE /* TopTitleLabelView.swift */,
@@ -555,7 +552,6 @@
 				106C29102A1086F200E0F78E /* CardView.swift in Sources */,
 				105196FB2A18DA060070CBBE /* ProfileVC.swift in Sources */,
 				105196D12A17DEB60070CBBE /* TrendingTableViewCell.swift in Sources */,
-				10794EA12A193CDE005CA258 /* UIScrollView+.swift in Sources */,
 				105196972A178E5D0070CBBE /* halfCircleRightView.swift in Sources */,
 				10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */,
 			);

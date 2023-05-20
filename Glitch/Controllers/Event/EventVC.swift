@@ -125,6 +125,34 @@ extension EventVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = EventDetailHalfVC()
         
+        switch indexPath.row {
+        case 0:
+            break
+        case 1:
+            vc.logoView.image = UIImage(named: "KewlPass")
+            vc.titleLabel.text = "KewlPass NFT"
+        case 2:
+            vc.logoView.image = UIImage(named: "BorrowersRush")
+            vc.titleLabel.text = "Borrowers Rush Week 2"
+        case 3:
+            vc.logoView.image = UIImage(named: "iZUMi")
+            vc.titleLabel.text = "iZUMi x Syncera Partnership ..."
+        case 4:
+            vc.logoView.image = UIImage(named: "bits")
+            vc.titleLabel.text = "bit’s Tribute to Classical NFTs ..."
+        case 5:
+            vc.logoView.image = UIImage(named: "CrusSwap")
+            vc.titleLabel.text = "CrusSwap Community Mission ..."
+        case 6:
+            vc.logoView.image = UIImage(named: "League")
+            vc.titleLabel.text = "League of Traders May Giveaw ..."
+        case 7:
+            vc.logoView.image = UIImage(named: "TaskFi")
+            vc.titleLabel.text = "TaskFi AI Protocol TaskFi AIWe..."
+        default:
+            break
+        }
+        
         vc.modalPresentationStyle = .pageSheet
         
         if let sheet = vc.sheetPresentationController {
