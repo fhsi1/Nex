@@ -41,7 +41,7 @@ class TrendingDetailVC: UIViewController {
     
     lazy var profileView: TrendingProfileView = {
         let view = TrendingProfileView()
-        view.cardView.profileCardView.nftView.image = UIImage(named: "DummyNFT")
+        view.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
         view.cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
         return view
     }()

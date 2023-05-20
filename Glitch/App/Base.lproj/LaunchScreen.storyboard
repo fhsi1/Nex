@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,17 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackView" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-uO-Zol">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NEX" translatesAutoresizingMaskIntoConstraints="NO" id="QWA-AJ-0cP">
+                                <rect key="frame" x="131.33333333333337" y="416.66666666666669" width="130.66666666666663" height="43.666666666666686"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="VvE-uO-Zol" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="N0c-JM-Www"/>
-                            <constraint firstItem="VvE-uO-Zol" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Ood-xc-tXq"/>
-                            <constraint firstAttribute="trailing" secondItem="VvE-uO-Zol" secondAttribute="trailing" id="ioz-L0-8jc"/>
-                            <constraint firstAttribute="bottom" secondItem="VvE-uO-Zol" secondAttribute="bottom" id="toy-OT-t4d"/>
+                            <constraint firstItem="QWA-AJ-0cP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="d7F-mW-2Xr"/>
+                            <constraint firstItem="QWA-AJ-0cP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fhe-EE-5no"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,9 +33,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackView" width="500" height="1082.6666259765625"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="NEX" width="130.66667175292969" height="43.666667938232422"/>
     </resources>
 </document>

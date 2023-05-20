@@ -135,7 +135,7 @@ class HomeVC: UIViewController {
 
 extension HomeVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -144,9 +144,57 @@ extension HomeVC: UITableViewDataSource {
         
         switch tableView {
         case trendingVC.tableView:
-            break
+            switch indexPath.row {
+            case 0:
+                cell.elementView.logoView.image = UIImage(named: "NFT1")
+                cell.elementView.titleLabel.text = "Oninr"
+                cell.elementView.heartView.button.setImage(UIImage(named: "selectedHeart"), for: .normal)
+                
+                cell.elementView.imageView.removeFromSuperview()
+                cell.elementView.heartView.snp.makeConstraints {
+                    $0.leading.equalTo(cell.elementView.contentLabel.snp.leading)
+                    $0.top.equalTo(cell.elementView.contentLabel.snp.bottom).offset(20.0)
+                }
+            case 1:
+                cell.elementView.logoView.image = UIImage(named: "NFT2")
+                cell.elementView.titleLabel.text = "CryptoCities"
+                cell.elementView.typeLabel.text = "CSTW"
+                cell.elementView.contentLabel.text = """
+                The $TSUKA airdrop is now LIVE.
+                A $100,000 prize pool was announced, don't miss out
+                
+                http://tsuka.cash
+                
+                $PLSX #pulsex #pulsechain $HEX #HEX #PLSX $PSYOP $PEPE
+                $WAGMI #1000x $DONS #pepeislove
+                """
+                cell.elementView.imageView.image = UIImage(named: "CryptoCities")
+            case 2:
+                cell.elementView.logoView.image = UIImage(named: "NFT3")
+                cell.elementView.titleLabel.text = "Nina Dobrev"
+                cell.elementView.typeLabel.text = "CSTW"
+                cell.elementView.contentLabel.text = """
+                🚨 $PLS token airdrop is live!
+                
+                Check eligibility and claim on their site:
+                🔗 https://pulsechainclaims.com
+                """
+                cell.elementView.imageView.image = UIImage(named: "NinaDobrev")
+            case 3:
+                cell.elementView.logoView.image = UIImage(named: "Avalanche")
+                cell.elementView.titleLabel.text = "Avalanche"
+                cell.elementView.typeLabel.text = "CSTW"
+                cell.elementView.contentLabel.text = """
+                This year's Avalanche Summit showcased the innovation, passion, talent and growth of the Avalanche ecosystem and the community
+                
+                Here's an album of some select photos from Day 1 at Summit, and stay tuned for photos from Day 2 & 3 next week!
+                """
+                cell.elementView.imageView.image = UIImage(named: "Avax")
+            default:
+                break
+            }
         case cummunityVC.tableView:
-            cell.elementView.logoView.image = UIImage(named: "DummyNFT")
+            cell.elementView.logoView.image = UIImage(named: "NFT3")
         default:
             break
         }
@@ -165,5 +213,30 @@ extension HomeVC: UITableViewDelegate {
         tabBarController?.tabBar.isHidden = true
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        var height: CGFloat = 0.0
+        
+        switch tableView {
+        case trendingVC.tableView:
+            switch indexPath.row {
+            case 0:
+                height = 248.0
+            case 1:
+                height = 438.0
+            case 2:
+                height = 380.0
+            default:
+                height = 420.0
+            }
+        case cummunityVC.tableView:
+            break
+        default:
+            break
+        }
+        
+        return height
     }
 }

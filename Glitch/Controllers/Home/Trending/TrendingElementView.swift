@@ -35,13 +35,32 @@ class TrendingElementView: UIView {
         return label
     }()
     
+    lazy var divider: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1)
+        return view
+    }()
+    
+    lazy var typeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Hoodies"
+        label.textColor = UIColor(red: 0.917, green: 0.917, blue: 0.917, alpha: 1)
+        label.font = UIFont(name: "Inter-Regular", size: 11)
+        
+        let underlineAttriString = NSAttributedString(
+            string: label.text!,
+            attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
+        label.attributedText = underlineAttriString
+        return label
+    }()
+    
     lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.text = """
         No more data theft!
         your data = your icome 🤑 
         #HUDltoken is LIVE ON #BNBchain
-
+        
         CONTRACT:
         1edwq09w3980129813hd9102910293sdasd092
         #PancakeSwap
@@ -95,6 +114,8 @@ class TrendingElementView: UIView {
         [
             logoView,
             stackView,
+            divider,
+            typeLabel,
             contentLabel,
             imageView,
             heartView,
@@ -111,6 +132,18 @@ class TrendingElementView: UIView {
         stackView.snp.makeConstraints {
             $0.leading.equalTo(logoView.snp.trailing).offset(8.0)
             $0.centerY.equalTo(logoView.snp.centerY)
+        }
+        
+        divider.snp.makeConstraints {
+            $0.top.equalTo(dateLabel.snp.top)
+            $0.leading.equalTo(dateLabel.snp.trailing).offset(4.0)
+            $0.width.equalTo(1.0)
+            $0.bottom.equalTo(dateLabel.snp.bottom)
+        }
+        
+        typeLabel.snp.makeConstraints {
+            $0.leading.equalTo(divider.snp.trailing).offset(4.0)
+            $0.centerY.equalTo(divider.snp.centerY)
         }
         
         contentLabel.snp.makeConstraints {

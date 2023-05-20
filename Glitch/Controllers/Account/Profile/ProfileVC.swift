@@ -25,7 +25,7 @@ class ProfileVC: UIViewController {
             view.qrCardView.backButtonView
         ].forEach { $0.addTarget(self, action: #selector(flip), for: .touchUpInside) }
         
-        view.profileCardView.nftView.image = UIImage(named: "DummyNFT")
+        view.profileCardView.nftView.image = UIImage(named: "NFT3")
         view.qrCardView.qrView.image = UIImage(named: "DummyQR")
         
         return view

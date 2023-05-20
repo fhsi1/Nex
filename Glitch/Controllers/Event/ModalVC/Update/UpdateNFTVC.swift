@@ -44,7 +44,7 @@ class UpdateNFTVC: UIViewController {
     
     lazy var nftView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "DummyNFT")
+        view.image = UIImage(named: "NFT3")
         view.layer.cornerRadius = 18.0
         return view
     }()
