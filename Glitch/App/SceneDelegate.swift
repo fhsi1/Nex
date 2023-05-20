@@ -5,7 +5,9 @@
 //  Created by Yujean Cho on 2023/04/30.
 //
 
+import Foundation
 import UIKit
+import Moya
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,6 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        requestCreateUser()
+        requestMint()
         
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .white
@@ -52,3 +57,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    func requestCreateUser() {
+        let provider = MoyaProvider<APIService>()
+        
+        let json = [
+            "address": "0xDF0A4DC76eD4d47a06C3421941504975D5D57FFE"
+        ]
+        
+        provider.request(.createUser(request: json)) { result in
+            switch result {
+            case .success:
+                print("✅ success")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func requestMint() {
+        let provider = MoyaProvider<APIService>()
+        
+        let json = [
+            "address": "0xDF0A4DC76eD4d47a06C3421941504975D5D57FFE"
+        ]
+        
+        provider.request(.mint(request: json)) { result in
+            switch result {
+            case .success:
+                print("✅ success")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}

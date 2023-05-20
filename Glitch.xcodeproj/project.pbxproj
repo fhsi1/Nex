@@ -69,6 +69,8 @@
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
+		10794EB42A1960ED005CA258 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EB32A1960ED005CA258 /* APIService.swift */; };
+		10794EB72A19630B005CA258 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10794EB62A19630B005CA258 /* Encodable+.swift */; };
 		10AFB4342A0F533600F23794 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4332A0F533600F23794 /* HomeVC.swift */; };
 		10AFB4362A0F535400F23794 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4352A0F535400F23794 /* AccountVC.swift */; };
 		10AFB43A2A0F538900F23794 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB4392A0F538900F23794 /* EventVC.swift */; };
@@ -132,6 +134,8 @@
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
+		10794EB32A1960ED005CA258 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		10794EB62A19630B005CA258 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		10AFB4332A0F533600F23794 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		10AFB4352A0F535400F23794 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		10AFB4392A0F538900F23794 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
@@ -176,8 +180,8 @@
 			children = (
 				1041C68729FE483400836EEB /* App */,
 				1041C68829FE484100836EEB /* Controllers */,
-				104BF2B72A10E5C200EFA7A4 /* Network */,
 				104BF2BA2A10E5DB00EFA7A4 /* Utilites */,
+				10794EB22A1960C3005CA258 /* Network */,
 				1051969E2A1790930070CBBE /* Font */,
 				1041C67E29FE45C500836EEB /* Info.plist */,
 			);
@@ -207,27 +211,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		104BF2B72A10E5C200EFA7A4 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		104BF2BA2A10E5DB00EFA7A4 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
 				105196912A178E220070CBBE /* View */,
-				104BF2BC2A10E5EE00EFA7A4 /* Module */,
+				10794EB52A1962F8005CA258 /* Module */,
 			);
 			path = Utilites;
-			sourceTree = "<group>";
-		};
-		104BF2BC2A10E5EE00EFA7A4 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Module;
 			sourceTree = "<group>";
 		};
 		104BF2BD2A10E96800EFA7A4 /* ModalVC */ = {
@@ -383,6 +373,22 @@
 			path = QRCardView;
 			sourceTree = "<group>";
 		};
+		10794EB22A1960C3005CA258 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				10794EB32A1960ED005CA258 /* APIService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		10794EB52A1962F8005CA258 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				10794EB62A19630B005CA258 /* Encodable+.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		10AFB42F2A0F530300F23794 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +541,7 @@
 				105196F22A18D1570070CBBE /* UpdateNFTVC.swift in Sources */,
 				105196952A178E460070CBBE /* halfCircleLeftView.swift in Sources */,
 				1051969B2A178E7C0070CBBE /* UIColor+.swift in Sources */,
+				10794EB72A19630B005CA258 /* Encodable+.swift in Sources */,
 				105196E22A1870B60070CBBE /* TrendingContentsTitleButton.swift in Sources */,
 				105196DA2A18647B0070CBBE /* TrendingDetailVC.swift in Sources */,
 				106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */,
@@ -542,6 +549,7 @@
 				105196D32A17E30D0070CBBE /* statusButtonView.swift in Sources */,
 				105196EC2A18BC410070CBBE /* TopTitleLabelView.swift in Sources */,
 				105196932A178E320070CBBE /* DashedLineView.swift in Sources */,
+				10794EB42A1960ED005CA258 /* APIService.swift in Sources */,
 				105196E62A1887F30070CBBE /* TrendingProfileView.swift in Sources */,
 				105196D52A184F8C0070CBBE /* TrendingElementView.swift in Sources */,
 				1041C67329FE45C400836EEB /* SceneDelegate.swift in Sources */,
