@@ -13,11 +13,19 @@ class TopCategroyButtonView: UIView {
     
     lazy var firstButton: UIButton = {
         let button = UIButton()
+        button.setTitle("Profile", for: .normal)
+        button.setTitleColor(.nWhite, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Inter-Bold", size: 24)
+//        button.addTarget(self, action: #selector(firstSelected), for: .touchUpInside)
         return button
     }()
     
     lazy var secondButton: UIButton = {
         let button = UIButton()
+        button.setTitle("Contents", for: .normal)
+        button.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Inter-Bold", size: 24)
+//        button.addTarget(self, action: #selector(secondSelected), for: .touchUpInside)
         return button
     }()
     
@@ -36,5 +44,29 @@ class TopCategroyButtonView: UIView {
             firstButton,
             secondButton
         ].forEach { addSubview($0) }
+        
+        firstButton.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.height.equalTo(29.0)
+        }
+        
+        secondButton.snp.makeConstraints {
+            $0.centerY.equalTo(firstButton.snp.centerY)
+            $0.leading.equalTo(firstButton.snp.trailing).offset(12.0)
+            $0.height.equalTo(firstButton.snp.height)
+        }
     }
 }
+
+//extension TopCategroyButtonView {
+//    @objc func firstSelected() {
+//        firstButton.setTitleColor(.nWhite, for: .normal)
+//        secondButton.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
+//    }
+//    
+//    @objc func secondSelected() {
+//        secondButton.setTitleColor(.nWhite, for: .normal)
+//        firstButton.setTitleColor(UIColor(red: 0.342, green: 0.342, blue: 0.342, alpha: 1), for: .normal)
+//    }
+//}
