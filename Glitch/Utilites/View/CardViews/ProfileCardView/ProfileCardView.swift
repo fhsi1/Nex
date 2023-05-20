@@ -21,8 +21,6 @@ class ProfileCardView: UIView {
     lazy var nftView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 9.74
-        view.layer.borderColor = UIColor.gray.cgColor
-        view.layer.borderWidth = 1.0
         return view
     }()
     

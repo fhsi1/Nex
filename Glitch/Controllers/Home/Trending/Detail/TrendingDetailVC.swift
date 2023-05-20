@@ -90,7 +90,6 @@ class TrendingDetailVC: UIViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.isHidden = false
         
-        navigationItem.title = "Nina Dobrev"
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.nWhite!
         ]

@@ -268,20 +268,63 @@ extension HomeVC: UITableViewDataSource {
 
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TrendingDetailVC()
         
         switch tableView {
         case trendingVC.tableView:
-            let vc = TrendingDetailVC()
-            
-            navigationController?.navigationBar.isHidden = false
-            tabBarController?.tabBar.isHidden = true
-            
-            navigationController?.pushViewController(vc, animated: true)
+            switch indexPath.row {
+            case 0:
+                vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "NFT1")
+                vc.profileView.cardView.profileCardView.nameLabel.text = "Oninr"
+                vc.profileView.cardView.qrCardView.nameLabel.text = "Oninr"
+                vc.navigationItem.title = "Oninr"
+            case 1:
+                vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "NFT2")
+                vc.profileView.cardView.profileCardView.nameLabel.text = "CryptoCities"
+                vc.profileView.cardView.qrCardView.nameLabel.text = "CryptoCities"
+                vc.navigationItem.title = "CryptoCities"
+            case 2:
+                vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
+                vc.profileView.cardView.profileCardView.nameLabel.text = "Nina Dobrev"
+                vc.profileView.cardView.qrCardView.nameLabel.text = "Nina Dobrev"
+                vc.navigationItem.title = "Nina Dobrev"
+            case 3:
+                vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "Avalanche")
+                vc.profileView.cardView.profileCardView.nameLabel.text = "Avalanche"
+                vc.profileView.cardView.qrCardView.nameLabel.text = "Avalanche"
+                vc.navigationItem.title = "Avalanche"
+            default:
+                break
+            }
         case cummunityVC.tableView:
-            break
+            switch indexPath.row {
+            case 0:
+                vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "Johnny")
+                vc.profileView.cardView.profileCardView.nameLabel.text = "Johnny"
+                vc.profileView.cardView.qrCardView.nameLabel.text = "Johnny"
+                vc.navigationItem.title = "Johnny"
+            case 1:
+                vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "OmnipresentPepe")
+                vc.profileView.cardView.profileCardView.nameLabel.text = "Omnipresent Pepe"
+                vc.profileView.cardView.profileCardView.nameLabel.font = UIFont(name: "Roboto-Bold", size: 23)
+                vc.profileView.cardView.qrCardView.nameLabel.text = "Omnipresent Pepe"
+                vc.navigationItem.title = "Omnipresent Pepe"
+            case 2:
+                vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
+                vc.profileView.cardView.profileCardView.nameLabel.text = "Ten.eth"
+                vc.profileView.cardView.qrCardView.nameLabel.text = "Ten.eth"
+                vc.navigationItem.title = "Ten.eth"
+            default:
+                break
+            }
         default:
             break
         }
+        
+        navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = true
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -216,4 +216,19 @@ extension AccountVC: UITableViewDelegate {
         
         return height
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TrendingDetailVC()
+        
+        vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
+        vc.profileView.cardView.profileCardView.nameLabel.text = "Nex"
+        vc.profileView.cardView.qrCardView.nameLabel.text = "Nex"
+        
+        vc.navigationItem.title = "Nex"
+        
+        navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = true
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
