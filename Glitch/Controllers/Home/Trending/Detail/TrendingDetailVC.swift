@@ -40,7 +40,7 @@ class TrendingDetailVC: UIViewController {
     
     lazy var profileView: TrendingProfileView = {
         let view = TrendingProfileView()
-        view.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
+        view.cardView.profileCardView.nftView.image = UIImage(named: "NFT1")
         view.cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
         view.cardView.profileCardView.descriptionLabel.text = "Web3 Surfer Nina Dobrev"
         view.cardView.qrCardView.descriptionLabel.text = "Web3 Surfer Nina Dobrev"

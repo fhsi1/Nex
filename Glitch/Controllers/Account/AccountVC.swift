@@ -71,6 +71,20 @@ class AccountVC: UIViewController {
         contentView1.isHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        view.setNeedsDisplay()
+
+        if let status = KeychainSwift().get("status") {
+            guard let url = URL(string: KeychainSwift().get("externalURL") ?? "") else { return }
+            
+            if status == "1" {
+                profileVC.cardView.profileCardView.nftView.kf.setImage(with: url)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .nDarkBlack
@@ -81,6 +95,8 @@ class AccountVC: UIViewController {
         guard let url = URL(string: KeychainSwift().get("externalURL") ?? "") else { return }
         
         profileVC.cardView.profileCardView.nftView.kf.setImage(with: url)
+        
+//        profileVC.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
     }
     
     private func setupNavigationBar() {
@@ -144,9 +160,15 @@ extension AccountVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as! TrendingTableViewCell
         
         cell.elementView.logoView.image = UIImage(named: "NFT3")
+//
+//        if let url = URL(string: KeychainSwift().get("externalURL") ?? "") {
+//            cell.elementView.logoView.kf.setImage(with: url)
+//        }
         
-        if let url = URL(string: KeychainSwift().get("externalURL") ?? "") {
-            cell.elementView.logoView.kf.setImage(with: url)
+        if let status = KeychainSwift().get("status") {
+            if status == "1" {
+                profileVC.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
+            }
         }
         
         cell.elementView.titleLabel.text = "Nex"
@@ -232,7 +254,7 @@ extension AccountVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TrendingDetailVC()
         
-        vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
+        vc.profileView.cardView.profileCardView.nftView.image = UIImage(named: "NFT1")
         vc.profileView.cardView.profileCardView.nameLabel.text = "Nex"
         vc.profileView.cardView.qrCardView.nameLabel.text = "Nex"
         

@@ -26,6 +26,11 @@ class HomeVC: UIViewController {
         return button
     }()
     
+    lazy var postButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
     lazy var contentView1: UIView = {
         let view = UIView()
         view.isHidden = false

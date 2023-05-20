@@ -60,7 +60,11 @@ class UpdateNFTVC: UIViewController {
     }()
     
     @objc func tappedCloseButton() {
-        dismiss(animated: true)
+        let mainViewController = TabBarVC()
+        
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+        guard let delegate = sceneDelegate else { return }
+        delegate.window?.rootViewController = mainViewController
     }
     
     override func viewDidLoad() {
@@ -71,8 +75,14 @@ class UpdateNFTVC: UIViewController {
         animationView.play()
         
         guard let url = URL(string: KeychainSwift().get("externalURL") ?? "") else { return }
-        
+
         nftView.kf.setImage(with: url)
+        
+        if let status = KeychainSwift().get("status") {
+            if status == "1" {
+                nftView.image = UIImage(named: "NFT3")
+            }
+        }
     }
     
     private func setupViews() {

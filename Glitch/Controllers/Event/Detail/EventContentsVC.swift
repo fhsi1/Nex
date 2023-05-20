@@ -87,16 +87,11 @@ extension EventContentsVC {
             case .success(let response):
                 print("✅ success")
                 
-                do {
-                    let responseObject = try JSONDecoder().decode(EventResponse.self, from: response.data)
-                    
-                    keychain.set(responseObject.externalURL, forKey: "externalURL")
-                    
-                    print(responseObject.externalURL)
-                    
-                } catch {
-                    print(error)
-                }
+                let responseString = String(decoding: response.data, as: UTF8.self)
+                
+                keychain.set(responseString, forKey: "externalURL")
+                
+                keychain.set("1", forKey: "status")
                 
                 let vc = UpdateNFTVC()
                 

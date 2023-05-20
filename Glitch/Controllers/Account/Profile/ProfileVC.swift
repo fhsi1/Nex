@@ -31,7 +31,7 @@ class ProfileVC: UIViewController {
         view.qrCardView.nameLabel.text = "Nex"
         view.qrCardView.descriptionLabel.text = "Web3 Sufer"
         
-        view.profileCardView.nftView.image = UIImage(named: "NFT3")
+        view.profileCardView.nftView.image = UIImage(named: "NFT1")
         view.qrCardView.qrView.image = UIImage(named: "DummyQR")
         
         return view

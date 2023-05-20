@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Moya
+import KeychainSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = .white
         window?.overrideUserInterfaceStyle = .light
         window?.rootViewController = TabBarVC()
+        
+        KeychainSwift().set("0", forKey: "status")
         
         window?.makeKeyAndVisible()
     }
