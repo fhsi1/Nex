@@ -43,6 +43,8 @@ class TrendingDetailVC: UIViewController {
         let view = TrendingProfileView()
         view.cardView.profileCardView.nftView.image = UIImage(named: "NFT3")
         view.cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
+        view.cardView.profileCardView.descriptionLabel.text = "Web3 Surfer Nina Dobrev"
+        view.cardView.qrCardView.descriptionLabel.text = "Web3 Surfer Nina Dobrev"
         return view
     }()
     
@@ -54,12 +56,20 @@ class TrendingDetailVC: UIViewController {
     
     lazy var interestCommunityView: TrendingContentsView = {
         let view = TrendingContentsView()
+        view.titleView.titleLabel.text = "Joined Communites"
+        
+        view.tableView.dataSource = self
+        
+        view.tableView.register(TrendingContentsTableViewCell.self, forCellReuseIdentifier: "TrendingContentsTableViewCell")
         return view
     }()
     
     lazy var eventView: TrendingContentsView = {
         let view = TrendingContentsView()
-        view.titleView.titleLabel.text = "참여 이벤트"
+        view.titleView.titleLabel.text = "Participated Events"
+        view.tableView.dataSource = self
+        
+        view.tableView.register(TrendingContentsTableViewCell.self, forCellReuseIdentifier: "TrendingContentsTableViewCell")
         return view
     }()
     
@@ -79,6 +89,11 @@ class TrendingDetailVC: UIViewController {
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.isHidden = false
+        
+        navigationItem.title = "Nina Dobrev"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.nWhite!
+        ]
         
         let backIcon = UIImage(named: "leftArrow")?.withRenderingMode(.alwaysOriginal)
         
@@ -130,5 +145,57 @@ class TrendingDetailVC: UIViewController {
             $0.width.equalTo(stackView.snp.width)
             $0.height.equalTo(321.0)
         }
+    }
+}
+
+extension TrendingDetailVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingContentsTableViewCell", for: indexPath) as! TrendingContentsTableViewCell
+        
+        cell.selectionStyle = .none
+        
+        switch tableView {
+        case interestCommunityView.tableView:
+            switch indexPath.row {
+            case 0:
+                cell.elementView.countLabel.text = "31.5K"
+            case 1:
+                cell.elementView.logoView.image = UIImage(named: "Space")
+                cell.elementView.titleLabel.text = "Space"
+                cell.elementView.logoView.image = UIImage(named: "bitsSquare")
+                cell.elementView.countLabel.text = "170.7K"
+            case 2:
+                cell.elementView.logoView.image = UIImage(named: "meme")
+                cell.elementView.titleLabel.text = "MEME"
+                cell.elementView.countLabel.text = "21.4K"
+            default:
+                break
+            }
+        case eventView.tableView:
+            switch indexPath.row {
+            case 0:
+                cell.elementView.logoView.image = UIImage(named: "TaskFiSquare")
+                cell.elementView.titleLabel.text = "TaskFi AI Protocol TaskFi AIWe..."
+                cell.elementView.countLabel.text = "2023.05.18~2023.06.18"
+            case 1:
+                cell.elementView.logoView.image = UIImage(named: "bits")
+                cell.elementView.titleLabel.text = "KewlPass NFT"
+                cell.elementView.countLabel.text = "2023.05.18~2023.06.18"
+            case 2:
+                cell.elementView.logoView.image = UIImage(named: "League")
+                cell.elementView.titleLabel.text = "Borrowers Rush Week 2"
+                cell.elementView.countLabel.text = "2023.05.18~2023.06.18"
+            default:
+                break
+            }
+        default:
+            break
+        }
+        
+        return cell
     }
 }

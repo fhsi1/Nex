@@ -21,9 +21,19 @@ class TrendingProfileView: UIView {
         return view
     }()
     
-    lazy var contactButton: UIButton = {
+    lazy var contactButton1: UIButton = {
         let button = UIButton()
-        button.setTitle("연락하기", for: .normal)
+        button.setTitle("Message", for: .normal)
+        button.setTitleColor(.nWhite, for: .normal)
+        button.backgroundColor = UIColor(red: 0.708, green: 0.708, blue: 0.708, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
+        button.layer.cornerRadius = 15.0
+        return button
+    }()
+    
+    lazy var contactButton2: UIButton = {
+        let button = UIButton()
+        button.setTitle("Message", for: .normal)
         button.setTitleColor(.nWhite, for: .normal)
         button.backgroundColor = UIColor(red: 0.708, green: 0.708, blue: 0.708, alpha: 1)
         button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
@@ -73,7 +83,8 @@ class TrendingProfileView: UIView {
             cardView
         ].forEach { addSubview($0) }
         
-        cardView.profileCardView.addSubview(contactButton)
+        cardView.profileCardView.addSubview(contactButton1)
+        cardView.qrCardView.addSubview(contactButton2)
         
         cardView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(32.0)
@@ -82,10 +93,17 @@ class TrendingProfileView: UIView {
             $0.top.equalToSuperview().inset(70.0)
         }
         
-        contactButton.snp.makeConstraints {
+        contactButton1.snp.makeConstraints {
             $0.centerY.equalTo(cardView.profileCardView.nameLabel.snp.centerY)
             $0.trailing.equalTo(cardView.profileCardView.snp.trailing).inset(20.0)
-            $0.width.equalTo(64.0)
+            $0.width.equalTo(68.0)
+            $0.height.equalTo(27.0)
+        }
+        
+        contactButton2.snp.makeConstraints {
+            $0.centerY.equalTo(cardView.qrCardView.nameLabel.snp.centerY)
+            $0.trailing.equalTo(cardView.qrCardView.snp.trailing).inset(20.0)
+            $0.width.equalTo(68.0)
             $0.height.equalTo(27.0)
         }
     }

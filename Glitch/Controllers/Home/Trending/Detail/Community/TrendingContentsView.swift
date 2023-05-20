@@ -19,9 +19,6 @@ class TrendingContentsView: UIView {
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.rowHeight = 80.0
-        view.dataSource = self
-        
-        view.register(TrendingContentsTableViewCell.self, forCellReuseIdentifier: "TrendingContentsTableViewCell")
         
         view.isScrollEnabled = false
         view.backgroundColor = .clear
@@ -59,18 +56,4 @@ class TrendingContentsView: UIView {
             $0.height.equalTo(240.0)
         }
     }
-}
-
-extension TrendingContentsView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingContentsTableViewCell", for: indexPath) as! TrendingContentsTableViewCell
-        
-        return cell
-    }
-    
-    
 }
