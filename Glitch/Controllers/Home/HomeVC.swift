@@ -207,6 +207,9 @@ extension HomeVC: UITableViewDataSource {
                 break
             }
         case cummunityVC.tableView:
+            cell.elementView.divider.removeFromSuperview()
+            cell.elementView.typeLabel.removeFromSuperview()
+            
             switch indexPath.row {
             case 0:
                 cell.elementView.logoView.image = UIImage(named: "Johnny")
