@@ -97,7 +97,7 @@ class QRCardView: UIView {
         }
         
         nameLabel.snp.makeConstraints {
-            $0.leading.equalTo(qrView.snp.leading)
+            $0.leading.equalToSuperview().inset(20.0)
             $0.top.equalTo(qrView.snp.bottom).offset(24.0)
         }
         
@@ -127,8 +127,8 @@ class QRCardView: UIView {
         }
         
         infoView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(40.0)
-            $0.trailing.equalToSuperview().inset(40.0)
+            $0.leading.equalToSuperview().inset(28.0)
+            $0.trailing.equalToSuperview().inset(28.0)
             $0.top.equalTo(horizontalDivider.snp.bottom).offset(27.32)
         }
     }

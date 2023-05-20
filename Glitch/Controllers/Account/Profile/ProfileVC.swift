@@ -25,13 +25,29 @@ class ProfileVC: UIViewController {
             view.qrCardView.backButtonView
         ].forEach { $0.addTarget(self, action: #selector(flip), for: .touchUpInside) }
         
+        view.profileCardView.nameLabel.text = "Nex"
+        view.profileCardView.descriptionLabel.text = "Web3 Sufer"
+        
+        view.qrCardView.nameLabel.text = "Nex"
+        view.qrCardView.descriptionLabel.text = "Web3 Sufer"
+        
         view.profileCardView.nftView.image = UIImage(named: "NFT3")
         view.qrCardView.qrView.image = UIImage(named: "DummyQR")
         
         return view
     }()
     
-    lazy var editProfileButton: UIButton = {
+    lazy var editProfileButton1: UIButton = {
+        let button = UIButton()
+        button.setTitle("Edit Profile", for: .normal)
+        button.setTitleColor(UIColor(red: 0.467, green: 0.467, blue: 0.467, alpha: 1), for: .normal)
+        button.backgroundColor = UIColor(red: 0.958, green: 0.958, blue: 0.958, alpha: 1)
+        button.layer.cornerRadius = 13.0
+        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
+        return button
+    }()
+    
+    lazy var editProfileButton2: UIButton = {
         let button = UIButton()
         button.setTitle("Edit Profile", for: .normal)
         button.setTitleColor(UIColor(red: 0.467, green: 0.467, blue: 0.467, alpha: 1), for: .normal)
@@ -81,7 +97,8 @@ class ProfileVC: UIViewController {
             cardView
         ].forEach { view.addSubview($0) }
         
-        cardView.profileCardView.addSubview(editProfileButton)
+        cardView.profileCardView.addSubview(editProfileButton1)
+        cardView.qrCardView.addSubview(editProfileButton2)
         
         backView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -94,9 +111,16 @@ class ProfileVC: UIViewController {
             $0.top.equalToSuperview().inset(32.0)
         }
         
-        editProfileButton.snp.makeConstraints {
+        editProfileButton1.snp.makeConstraints {
             $0.centerY.equalTo(cardView.profileCardView.nameLabel.snp.centerY)
             $0.leading.equalTo(cardView.profileCardView.nameLabel.snp.trailing).offset(4.0)
+            $0.height.equalTo(27.0)
+            $0.width.equalTo(75.0)
+        }
+        
+        editProfileButton2.snp.makeConstraints {
+            $0.centerY.equalTo(cardView.qrCardView.nameLabel.snp.centerY)
+            $0.leading.equalTo(cardView.qrCardView.nameLabel.snp.trailing).offset(4.0)
             $0.height.equalTo(27.0)
             $0.width.equalTo(75.0)
         }

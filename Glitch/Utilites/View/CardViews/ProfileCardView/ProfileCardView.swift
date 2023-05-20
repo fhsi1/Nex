@@ -80,7 +80,6 @@ class ProfileCardView: UIView {
             backButtonView,
             nftView,
             nameLabel,
-//            editProfileButton,
             descriptionLabel,
             horizontalDivider,
             dot1,
@@ -100,16 +99,9 @@ class ProfileCardView: UIView {
         }
         
         nameLabel.snp.makeConstraints {
-            $0.leading.equalTo(nftView.snp.leading)
+            $0.leading.equalToSuperview().inset(20.0)
             $0.top.equalTo(nftView.snp.bottom).offset(24.0)
         }
-        
-//        editProfileButton.snp.makeConstraints {
-//            $0.centerY.equalTo(nameLabel.snp.centerY)
-//            $0.leading.equalTo(nameLabel.snp.trailing).offset(4.0)
-//            $0.height.equalTo(27.0)
-//            $0.width.equalTo(77.0)
-//        }
         
         descriptionLabel.snp.makeConstraints {
             $0.leading.equalTo(nameLabel.snp.leading)
@@ -137,8 +129,8 @@ class ProfileCardView: UIView {
         }
         
         infoView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(50.0)
-            $0.trailing.equalToSuperview().inset(50.0)
+            $0.leading.equalToSuperview().inset(28.0)
+            $0.trailing.equalToSuperview().inset(28.0)
             $0.top.equalTo(horizontalDivider.snp.bottom).offset(27.32)
             
         }

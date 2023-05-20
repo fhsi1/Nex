@@ -11,15 +11,15 @@ import SnapKit
 
 class InfoView: UIView {
     
-    private lazy var followerTitleLabel: UILabel = {
+    private lazy var communitesTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "운영 커뮤니티"
+        label.text = "My Communities"
         label.textColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
         label.font = UIFont(name: "Roboto-Regular", size: 14)
         return label
     }()
     
-    lazy var followerLabel: UILabel = {
+    lazy var communitiesLabel: UILabel = {
         let label = UILabel()
         label.text = "12"
         label.textColor = UIColor(red: 0.408, green: 0.408, blue: 0.408, alpha: 1)
@@ -33,17 +33,17 @@ class InfoView: UIView {
         return view
     }()
     
-    private lazy var categoryTitleLabel: UILabel = {
+    private lazy var joinedCommunitiesTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "관심 커뮤니티"
+        label.text = "Joined Communites"
         label.textColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
         label.font = UIFont(name: "Roboto-Regular", size: 14)
         return label
     }()
     
-    lazy var categoryLabel: UILabel = {
+    lazy var joinedCommunitiesLabel: UILabel = {
         let label = UILabel()
-        label.text = "dApp"
+        label.text = "1,003"
         label.textColor = UIColor(red: 0.408, green: 0.408, blue: 0.408, alpha: 1)
         label.font = UIFont(name: "Roboto-Regular", size: 16)
         return label
@@ -61,38 +61,38 @@ class InfoView: UIView {
     
     private func setupViews() {
         [
-            followerTitleLabel,
-            followerLabel,
+            communitesTitleLabel,
+            communitiesLabel,
             verticalDivider,
-            categoryTitleLabel,
-            categoryLabel
+            joinedCommunitiesTitleLabel,
+            joinedCommunitiesLabel
         ].forEach { addSubview($0) }
         
-        followerTitleLabel.snp.makeConstraints {
+        communitesTitleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.top.equalToSuperview()
         }
         
-        followerLabel.snp.makeConstraints {
-            $0.centerX.equalTo(followerTitleLabel.snp.centerX)
-            $0.top.equalTo(followerTitleLabel.snp.bottom).offset(6.0)
+        communitiesLabel.snp.makeConstraints {
+            $0.centerX.equalTo(communitesTitleLabel.snp.centerX)
+            $0.top.equalTo(communitesTitleLabel.snp.bottom).offset(6.0)
         }
         
         verticalDivider.snp.makeConstraints {
-            $0.top.equalTo(followerTitleLabel.snp.top)
+            $0.top.equalTo(communitesTitleLabel.snp.top)
             $0.width.equalTo(1.0)
-            $0.bottom.equalTo(followerLabel.snp.bottom)
-            $0.leading.equalTo(followerTitleLabel.snp.trailing).offset(32.0)
+            $0.bottom.equalTo(communitiesLabel.snp.bottom)
+            $0.leading.equalTo(communitesTitleLabel.snp.trailing).offset(16.0)
         }
         
-        categoryTitleLabel.snp.makeConstraints {
-            $0.leading.equalTo(verticalDivider.snp.trailing).offset(32.0)
+        joinedCommunitiesTitleLabel.snp.makeConstraints {
+            $0.leading.equalTo(verticalDivider.snp.trailing).offset(16.0)
             $0.top.equalTo(verticalDivider.snp.top)
         }
         
-        categoryLabel.snp.makeConstraints {
-            $0.centerX.equalTo(categoryTitleLabel.snp.centerX)
-            $0.top.equalTo(categoryTitleLabel.snp.bottom).offset(6.0)
+        joinedCommunitiesLabel.snp.makeConstraints {
+            $0.centerX.equalTo(joinedCommunitiesTitleLabel.snp.centerX)
+            $0.top.equalTo(joinedCommunitiesTitleLabel.snp.bottom).offset(6.0)
         }
     }
 }
