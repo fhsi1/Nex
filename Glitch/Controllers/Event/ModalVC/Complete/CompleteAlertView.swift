@@ -13,21 +13,27 @@ class CompleteAlertView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "이벤트 참여 완료"
+        label.text = "이벤트 참여 안내"
+        label.textColor = .nWhite
+        label.font = UIFont(name: "Roboto-Bold", size: 14)
         return label
     }()
     
-    lazy var okButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("확인", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 18.0
-        return button
+    lazy var contentLabel: UILabel = {
+        let label = UILabel()
+        label.text  = """
+        KewlPass NFT
+        이벤트 참여가 완료되었습니다.
+        """
+        label.textColor = .nWhite
+        label.font = UIFont(name: "Roboto-Regular", size: 13)
+        label.numberOfLines = 0
+        return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .nBlack
         
         setupViews()
     }
@@ -39,18 +45,17 @@ class CompleteAlertView: UIView {
     private func setupViews() {
         [
             titleLabel,
-            okButton
+            contentLabel
         ].forEach { addSubview($0) }
         
         titleLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(24.0)
+            $0.leading.equalToSuperview()
+            $0.top.equalToSuperview()
         }
         
-        okButton.snp.makeConstraints {
-            $0.centerX.equalTo(titleLabel.snp.centerX)
-            $0.top.equalTo(titleLabel.snp.bottom).offset(24.0)
-            $0.width.equalTo(72.0)
+        contentLabel.snp.makeConstraints {
+            $0.leading.equalTo(titleLabel.snp.leading)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(18.0)
         }
     }
 }
