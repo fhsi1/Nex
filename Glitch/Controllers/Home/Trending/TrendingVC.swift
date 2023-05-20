@@ -20,9 +20,9 @@ class TrendingVC: UIViewController {
         let view = UITableView()
         view.rowHeight = 248.0
         
-        view.dataSource = self
+//        view.dataSource = self
         
-        view.register(TrendingTableViewCell.self, forCellReuseIdentifier: "TrendingTableViewCell")
+//        view.register(TrendingTableViewCell.self, forCellReuseIdentifier: "TrendingTableViewCell")
         
         view.backgroundColor = .clear
         
@@ -51,19 +51,20 @@ class TrendingVC: UIViewController {
         }
     }
 }
-
-extension TrendingVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as! TrendingTableViewCell
-        
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-    
-    
-}
+//
+//extension TrendingVC: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 10
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as! TrendingTableViewCell
+//
+//        cell.selectionStyle = .none
+//
+//        return cell
+//    }
+//
+//
+//}
+//
