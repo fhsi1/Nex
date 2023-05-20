@@ -82,7 +82,8 @@ extension EventVC: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            break
+            cell.elementView.titleLabel.text = "NEXwap Airdrop Claim"
+            cell.elementView.logoView.image = UIImage(named: "NexIcon")
         case 1:
             cell.elementView.titleLabel.text = "KewlPass NFT"
             cell.elementView.logoView.image = UIImage(named: "KewlPass")
@@ -127,7 +128,9 @@ extension EventVC: UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            break
+            vc.logoView.image = UIImage(named: "NexIcon")
+            vc.titleLabel.text = "NEXwap.xyz"
+            vc.descriptionLabel.text = "Claim your $NEX token airdrop"
         case 1:
             vc.logoView.image = UIImage(named: "KewlPass")
             vc.titleLabel.text = "KewlPass NFT"

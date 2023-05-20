@@ -21,6 +21,8 @@ class EventDetailHalfVC: UIViewController {
     lazy var logoView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "benqi")
+        view.layer.cornerRadius = 8.0
+        view.clipsToBounds = true
         return view
     }()
     

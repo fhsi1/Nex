@@ -13,6 +13,8 @@ class EventElementView: UIView {
     lazy var logoView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "benqi")
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8.0
         return view
     }()
     
