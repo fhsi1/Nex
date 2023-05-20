@@ -27,13 +27,20 @@ class UpdateNFTVC: UIViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = """
-        Nex님,
-        새로운 NFT를 받았어요!
+        Nex,
+        You got the NEXt NFT!
         """
         label.textColor = .nWhite
         label.font = UIFont(name: "Roboto-Bold", size: 22)
         label.numberOfLines = 0
         label.textAlignment = .center
+        
+        let attirbutedString = NSMutableAttributedString(string: label.text!)
+        let range = (label.text! as NSString).range(of: "NEX")
+        attirbutedString.addAttribute(.foregroundColor, value: UIColor.nPurple!, range: range)
+        
+        label.attributedText = attirbutedString
+        
         return label
     }()
     
