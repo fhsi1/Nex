@@ -28,7 +28,6 @@ class TrendingDetailVC: UIViewController {
     private lazy var stackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [
             profileView,
-            scrollButton,
             interestCommunityView,
             eventView,
         ])
@@ -45,13 +44,8 @@ class TrendingDetailVC: UIViewController {
         view.cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
         view.cardView.profileCardView.descriptionLabel.text = "Web3 Surfer Nina Dobrev"
         view.cardView.qrCardView.descriptionLabel.text = "Web3 Surfer Nina Dobrev"
+        view.scrollDownButton.addTarget(self, action: #selector(tappedScrollDownButton), for: .touchUpInside)
         return view
-    }()
-    
-    lazy var scrollButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "scrollDown"), for: .normal)
-        return button
     }()
     
     lazy var interestCommunityView: TrendingContentsView = {
@@ -78,6 +72,12 @@ class TrendingDetailVC: UIViewController {
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.isHidden = true
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func tappedScrollDownButton() {
+        print("tappedScrollDownButton")
+        
+        scrollView.setContentOffset(CGPoint(x: 0, y: scrollView.contentSize.height - 700.0), animated: true)
     }
     
     override func viewDidLoad() {
@@ -129,11 +129,6 @@ class TrendingDetailVC: UIViewController {
         profileView.snp.makeConstraints {
             $0.width.equalTo(stackView.snp.width)
             $0.height.equalTo(604.0)
-        }
-        
-        scrollButton.snp.makeConstraints {
-            $0.width.equalTo(stackView.snp.width)
-            $0.height.equalTo(60.0)
         }
         
         interestCommunityView.snp.makeConstraints {

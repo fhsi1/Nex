@@ -41,6 +41,12 @@ class TrendingProfileView: UIView {
         return button
     }()
     
+    lazy var scrollDownButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "scrollDown"), for: .normal)
+        return button
+    }()
+    
     @objc func flip(_ sender: CardView) {
         let transitionOptions: UIView.AnimationOptions = [
             .transitionFlipFromRight,
@@ -80,7 +86,8 @@ class TrendingProfileView: UIView {
     
     private func setupViews() {
         [
-            cardView
+            cardView,
+            scrollDownButton
         ].forEach { addSubview($0) }
         
         cardView.profileCardView.addSubview(contactButton1)
@@ -105,6 +112,12 @@ class TrendingProfileView: UIView {
             $0.trailing.equalTo(cardView.qrCardView.snp.trailing).inset(20.0)
             $0.width.equalTo(68.0)
             $0.height.equalTo(27.0)
+        }
+        
+        scrollDownButton.snp.makeConstraints {
+            $0.centerX.equalTo(cardView.snp.centerX)
+            $0.top.equalTo(cardView.snp.bottom).offset(60.0)
+            $0.height.equalTo(24.0)
         }
     }
 }
