@@ -50,6 +50,13 @@
 		105196D12A17DEB60070CBBE /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196D02A17DEB60070CBBE /* TrendingTableViewCell.swift */; };
 		105196D32A17E30D0070CBBE /* statusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196D22A17E30D0070CBBE /* statusButtonView.swift */; };
 		105196D52A184F8C0070CBBE /* TrendingElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196D42A184F8C0070CBBE /* TrendingElementView.swift */; };
+		105196D72A185DA00070CBBE /* TopCategoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196D62A185DA00070CBBE /* TopCategoryButtonView.swift */; };
+		105196DA2A18647B0070CBBE /* TrendingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196D92A18647B0070CBBE /* TrendingDetailVC.swift */; };
+		105196DE2A1865590070CBBE /* TrendingContentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196DD2A1865590070CBBE /* TrendingContentsTableViewCell.swift */; };
+		105196E02A186D790070CBBE /* TrendingContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196DF2A186D790070CBBE /* TrendingContentsView.swift */; };
+		105196E22A1870B60070CBBE /* TrendingContentsTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196E12A1870B60070CBBE /* TrendingContentsTitleButton.swift */; };
+		105196E42A1880AF0070CBBE /* TrendingContentsElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196E32A1880AF0070CBBE /* TrendingContentsElementView.swift */; };
+		105196E62A1887F30070CBBE /* TrendingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196E52A1887F30070CBBE /* TrendingProfileView.swift */; };
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
@@ -99,6 +106,13 @@
 		105196D02A17DEB60070CBBE /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
 		105196D22A17E30D0070CBBE /* statusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statusButtonView.swift; sourceTree = "<group>"; };
 		105196D42A184F8C0070CBBE /* TrendingElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingElementView.swift; sourceTree = "<group>"; };
+		105196D62A185DA00070CBBE /* TopCategoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCategoryButtonView.swift; sourceTree = "<group>"; };
+		105196D92A18647B0070CBBE /* TrendingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingDetailVC.swift; sourceTree = "<group>"; };
+		105196DD2A1865590070CBBE /* TrendingContentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingContentsTableViewCell.swift; sourceTree = "<group>"; };
+		105196DF2A186D790070CBBE /* TrendingContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingContentsView.swift; sourceTree = "<group>"; };
+		105196E12A1870B60070CBBE /* TrendingContentsTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingContentsTitleButton.swift; sourceTree = "<group>"; };
+		105196E32A1880AF0070CBBE /* TrendingContentsElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingContentsElementView.swift; sourceTree = "<group>"; };
+		105196E52A1887F30070CBBE /* TrendingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingProfileView.swift; sourceTree = "<group>"; };
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
@@ -226,12 +240,14 @@
 		105196912A178E220070CBBE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				106C290E2A10849100E0F78E /* CardViews */,
 				105196922A178E320070CBBE /* DashedLineView.swift */,
 				105196942A178E460070CBBE /* halfCircleLeftView.swift */,
 				105196962A178E5D0070CBBE /* halfCircleRightView.swift */,
 				105196982A178E6C0070CBBE /* InfoView.swift */,
 				1051969A2A178E7C0070CBBE /* UIColor+.swift */,
 				105196D22A17E30D0070CBBE /* statusButtonView.swift */,
+				105196D62A185DA00070CBBE /* TopCategoryButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +286,7 @@
 				105196CE2A17DE440070CBBE /* TrendingVC.swift */,
 				105196D02A17DEB60070CBBE /* TrendingTableViewCell.swift */,
 				105196D42A184F8C0070CBBE /* TrendingElementView.swift */,
+				105196D82A1864680070CBBE /* Detail */,
 			);
 			path = Trending;
 			sourceTree = "<group>";
@@ -279,6 +296,35 @@
 			children = (
 			);
 			path = Community;
+			sourceTree = "<group>";
+		};
+		105196D82A1864680070CBBE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				105196D92A18647B0070CBBE /* TrendingDetailVC.swift */,
+				105196DB2A1864EB0070CBBE /* Community */,
+				105196DC2A1864FB0070CBBE /* Event */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		105196DB2A1864EB0070CBBE /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				105196E52A1887F30070CBBE /* TrendingProfileView.swift */,
+				105196DF2A186D790070CBBE /* TrendingContentsView.swift */,
+				105196DD2A1865590070CBBE /* TrendingContentsTableViewCell.swift */,
+				105196E12A1870B60070CBBE /* TrendingContentsTitleButton.swift */,
+				105196E32A1880AF0070CBBE /* TrendingContentsElementView.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		105196DC2A1864FB0070CBBE /* Event */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		106C290E2A10849100E0F78E /* CardViews */ = {
@@ -313,7 +359,6 @@
 				10AFB4332A0F533600F23794 /* HomeVC.swift */,
 				105196CC2A17DDF80070CBBE /* Trending */,
 				105196CD2A17DE1A0070CBBE /* Community */,
-				106C290E2A10849100E0F78E /* CardViews */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -437,22 +482,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105196E02A186D790070CBBE /* TrendingContentsView.swift in Sources */,
 				105196992A178E6C0070CBBE /* InfoView.swift in Sources */,
 				105196CB2A17B14E0070CBBE /* CoreVC.swift in Sources */,
 				1041C67529FE45C400836EEB /* TabBarVC.swift in Sources */,
 				10AFB4342A0F533600F23794 /* HomeVC.swift in Sources */,
 				104BF2C12A10EA7C00EFA7A4 /* CompleteAlertView.swift in Sources */,
+				105196DE2A1865590070CBBE /* TrendingContentsTableViewCell.swift in Sources */,
 				106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */,
 				1041C67129FE45C400836EEB /* AppDelegate.swift in Sources */,
 				105196CF2A17DE440070CBBE /* TrendingVC.swift in Sources */,
+				105196D72A185DA00070CBBE /* TopCategoryButtonView.swift in Sources */,
 				105196952A178E460070CBBE /* halfCircleLeftView.swift in Sources */,
 				1051969B2A178E7C0070CBBE /* UIColor+.swift in Sources */,
+				105196E22A1870B60070CBBE /* TrendingContentsTitleButton.swift in Sources */,
+				105196DA2A18647B0070CBBE /* TrendingDetailVC.swift in Sources */,
 				106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */,
 				10AFB4362A0F535400F23794 /* AccountVC.swift in Sources */,
 				105196D32A17E30D0070CBBE /* statusButtonView.swift in Sources */,
 				105196932A178E320070CBBE /* DashedLineView.swift in Sources */,
+				105196E62A1887F30070CBBE /* TrendingProfileView.swift in Sources */,
 				105196D52A184F8C0070CBBE /* TrendingElementView.swift in Sources */,
 				1041C67329FE45C400836EEB /* SceneDelegate.swift in Sources */,
+				105196E42A1880AF0070CBBE /* TrendingContentsElementView.swift in Sources */,
 				104BF2BF2A10E9A500EFA7A4 /* CompleteEventVC.swift in Sources */,
 				106C29102A1086F200E0F78E /* CardView.swift in Sources */,
 				105196D12A17DEB60070CBBE /* TrendingTableViewCell.swift in Sources */,

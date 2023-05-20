@@ -1,21 +1,15 @@
 //
-//  CommunityVC.swift
+//  TrendingProfileView.swift
 //  Glitch
 //
-//  Created by Yujean Cho on 2023/05/13.
+//  Created by Yujean Cho on 2023/05/20.
 //
 
 import Foundation
 import UIKit
+import SnapKit
 
-class AccountVC: UIViewController {
-    
-    private lazy var backView: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "BackView")
-        return view
-    }()
-    
+class TrendingProfileView: UIView {
     lazy var cardView: CardView = {
         let view = CardView()
         
@@ -54,36 +48,26 @@ class AccountVC: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .nDarkBlack
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         setupViews()
-        bindData()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
     private func setupViews() {
         [
-            backView,
             cardView
-        ].forEach { view.addSubview($0) }
-        
-        backView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+        ].forEach { addSubview($0) }
         
         cardView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(32.0)
             $0.trailing.equalToSuperview().inset(31.0)
             $0.height.equalTo(540.0)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().inset(52.0)
         }
-    }
-}
-
-extension AccountVC {
-    func bindData() {
-        cardView.profileCardView.nftView.image = UIImage(named: "DummyNFT")
-        cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
     }
 }

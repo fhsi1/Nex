@@ -11,11 +11,18 @@ import SnapKit
 
 class CoreVC: UIViewController {
     
+    private lazy var backView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "BackView")
+        return view
+    }()
+    
     lazy var button: UIButton = {
         let button = UIButton()
         button.setTitle("Button", for: .normal)
         button.backgroundColor = .nBlue
         button.addTarget(self, action: #selector(presentCoreApp), for: .touchUpInside)
+        button.layer.cornerRadius = 8.0
         return button
     }()
     
@@ -23,7 +30,10 @@ class CoreVC: UIViewController {
         print("presentingCoreApp Called")
         
 //        let url = "Core://agoakfejjabomempkjlepdflaleeobhb/home.html#/"
-        let url = "Core://X-avax1jggdngzc9l87rgurmfu0z0n0v4mxlqta0h3k6e"
+//        let url = "Core://X-avax1jggdngzc9l87rgurmfu0z0n0v4mxlqta0h3k6e"
+        
+//        let url = "Core://wallet.avax.network/access/privatekey"
+        let url = "Core://wallet.avax.network/enterwallet"
         
         if let openApp = URL(string: url), UIApplication.shared.canOpenURL(openApp) {
             // 버전별 처리
@@ -50,8 +60,13 @@ class CoreVC: UIViewController {
     
     private func setupViews() {
         [
+            backView,
             button
         ].forEach { view.addSubview($0) }
+        
+        backView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         
         button.snp.makeConstraints {
             $0.width.equalTo(100.0)

@@ -45,7 +45,7 @@ final class TabBarVC: UITabBarController {
         
         tabBar.tintColor = .nPurple
         tabBar.unselectedItemTintColor = .nWhite
-        tabBar.barTintColor = .nDarkBlack
+        tabBar.backgroundColor = .nDarkBlack
         tabBar.layer.borderWidth = 1.0
         tabBar.layer.borderColor = UIColor(red: 0.14, green: 0.14, blue: 0.14, alpha: 1.00).cgColor
         tabBar.layer.cornerRadius = 15.0
