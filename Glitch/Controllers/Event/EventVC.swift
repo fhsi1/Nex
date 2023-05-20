@@ -79,6 +79,8 @@ extension EventVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as! EventTableViewCell
         
+        cell.selectionStyle = .none
+        
         return cell
     }
     

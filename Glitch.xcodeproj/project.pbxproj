@@ -60,6 +60,7 @@
 		105196E82A18B2F20070CBBE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196E72A18B2F20070CBBE /* EventTableViewCell.swift */; };
 		105196EA2A18B4AE0070CBBE /* EventElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196E92A18B4AE0070CBBE /* EventElementView.swift */; };
 		105196EC2A18BC410070CBBE /* TopTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196EB2A18BC410070CBBE /* TopTitleLabelView.swift */; };
+		105196EF2A18BFFE0070CBBE /* EventDetailHalfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */; };
 		106C29102A1086F200E0F78E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C290F2A1086F200E0F78E /* CardView.swift */; };
 		106C29142A10876D00E0F78E /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29132A10876D00E0F78E /* ProfileCardView.swift */; };
 		106C29162A1087FD00E0F78E /* QRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C29152A1087FD00E0F78E /* QRCardView.swift */; };
@@ -119,6 +120,7 @@
 		105196E72A18B2F20070CBBE /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		105196E92A18B4AE0070CBBE /* EventElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventElementView.swift; sourceTree = "<group>"; };
 		105196EB2A18BC410070CBBE /* TopTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitleLabelView.swift; sourceTree = "<group>"; };
+		105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHalfVC.swift; sourceTree = "<group>"; };
 		106C290F2A1086F200E0F78E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		106C29132A10876D00E0F78E /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		106C29152A1087FD00E0F78E /* QRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCardView.swift; sourceTree = "<group>"; };
@@ -319,6 +321,14 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
+		105196ED2A18BFE10070CBBE /* HalfVC */ = {
+			isa = PBXGroup;
+			children = (
+				105196EE2A18BFFE0070CBBE /* EventDetailHalfVC.swift */,
+			);
+			path = HalfVC;
+			sourceTree = "<group>";
+		};
 		106C290E2A10849100E0F78E /* CardViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +378,7 @@
 				10AFB4392A0F538900F23794 /* EventVC.swift */,
 				105196E72A18B2F20070CBBE /* EventTableViewCell.swift */,
 				105196E92A18B4AE0070CBBE /* EventElementView.swift */,
+				105196ED2A18BFE10070CBBE /* HalfVC */,
 				104BF2BD2A10E96800EFA7A4 /* ModalVC */,
 			);
 			path = Event;
@@ -502,6 +513,7 @@
 				105196E42A1880AF0070CBBE /* TrendingContentsElementView.swift in Sources */,
 				104BF2BF2A10E9A500EFA7A4 /* CompleteEventVC.swift in Sources */,
 				105196E82A18B2F20070CBBE /* EventTableViewCell.swift in Sources */,
+				105196EF2A18BFFE0070CBBE /* EventDetailHalfVC.swift in Sources */,
 				106C29102A1086F200E0F78E /* CardView.swift in Sources */,
 				105196D12A17DEB60070CBBE /* TrendingTableViewCell.swift in Sources */,
 				105196972A178E5D0070CBBE /* halfCircleRightView.swift in Sources */,
