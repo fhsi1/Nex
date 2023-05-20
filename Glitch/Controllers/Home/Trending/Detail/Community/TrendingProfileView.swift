@@ -21,6 +21,16 @@ class TrendingProfileView: UIView {
         return view
     }()
     
+    lazy var contactButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("연락하기", for: .normal)
+        button.setTitleColor(.nWhite, for: .normal)
+        button.backgroundColor = UIColor(red: 0.708, green: 0.708, blue: 0.708, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
+        button.layer.cornerRadius = 15.0
+        return button
+    }()
+    
     @objc func flip(_ sender: CardView) {
         let transitionOptions: UIView.AnimationOptions = [
             .transitionFlipFromRight,
@@ -63,11 +73,20 @@ class TrendingProfileView: UIView {
             cardView
         ].forEach { addSubview($0) }
         
+        cardView.profileCardView.addSubview(contactButton)
+        
         cardView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(32.0)
             $0.trailing.equalToSuperview().inset(31.0)
             $0.height.equalTo(540.0)
-            $0.top.equalToSuperview().inset(52.0)
+            $0.top.equalToSuperview().inset(70.0)
+        }
+        
+        contactButton.snp.makeConstraints {
+            $0.centerY.equalTo(cardView.profileCardView.nameLabel.snp.centerY)
+            $0.trailing.equalTo(cardView.profileCardView.snp.trailing).inset(20.0)
+            $0.width.equalTo(64.0)
+            $0.height.equalTo(27.0)
         }
     }
 }

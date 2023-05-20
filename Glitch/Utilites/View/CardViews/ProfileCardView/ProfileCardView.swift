@@ -28,25 +28,15 @@ class ProfileCardView: UIView {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Nex님"
+        label.text = "Nina Dobrev"
         label.font = UIFont(name: "Roboto-Bold", size: 28)
         label.textColor = .ntitle
         return label
     }()
     
-    lazy var editProfileButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("프로필 편집", for: .normal)
-        button.setTitleColor(UIColor(red: 0.467, green: 0.467, blue: 0.467, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 0.958, green: 0.958, blue: 0.958, alpha: 1)
-        button.layer.cornerRadius = 13.0
-        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
-        return button
-    }()
-    
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "안녕하세요"
+        label.text = "블록체인 세상에 관심이 많은 Nina Dobrev"
         label.textColor = UIColor(red: 0.688, green: 0.688, blue: 0.688, alpha: 1)
         label.font = UIFont(name: "Roboto-Regular", size: 14)
         return label
@@ -90,7 +80,7 @@ class ProfileCardView: UIView {
             backButtonView,
             nftView,
             nameLabel,
-            editProfileButton,
+//            editProfileButton,
             descriptionLabel,
             horizontalDivider,
             dot1,
@@ -114,12 +104,12 @@ class ProfileCardView: UIView {
             $0.top.equalTo(nftView.snp.bottom).offset(24.0)
         }
         
-        editProfileButton.snp.makeConstraints {
-            $0.centerY.equalTo(nameLabel.snp.centerY)
-            $0.leading.equalTo(nameLabel.snp.trailing).offset(4.0)
-            $0.height.equalTo(27.0)
-            $0.width.equalTo(77.0)
-        }
+//        editProfileButton.snp.makeConstraints {
+//            $0.centerY.equalTo(nameLabel.snp.centerY)
+//            $0.leading.equalTo(nameLabel.snp.trailing).offset(4.0)
+//            $0.height.equalTo(27.0)
+//            $0.width.equalTo(77.0)
+//        }
         
         descriptionLabel.snp.makeConstraints {
             $0.leading.equalTo(nameLabel.snp.leading)
@@ -147,8 +137,8 @@ class ProfileCardView: UIView {
         }
         
         infoView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(40.0)
-            $0.trailing.equalToSuperview().inset(40.0)
+            $0.leading.equalToSuperview().inset(50.0)
+            $0.trailing.equalToSuperview().inset(50.0)
             $0.top.equalTo(horizontalDivider.snp.bottom).offset(27.32)
             
         }

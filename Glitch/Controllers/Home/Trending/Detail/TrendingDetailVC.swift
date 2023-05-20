@@ -28,13 +28,14 @@ class TrendingDetailVC: UIViewController {
     private lazy var stackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [
             profileView,
+            scrollButton,
             interestCommunityView,
             eventView,
         ])
         
         view.axis = .vertical
         view.distribution = .fillProportionally
-        view.spacing = 0.0
+        view.spacing = 24.0
         return view
     }()
     
@@ -43,6 +44,12 @@ class TrendingDetailVC: UIViewController {
         view.cardView.profileCardView.nftView.image = UIImage(named: "DummyNFT")
         view.cardView.qrCardView.qrView.image = UIImage(named: "DummyQR")
         return view
+    }()
+    
+    lazy var scrollButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "scrollDown"), for: .normal)
+        return button
     }()
     
     lazy var interestCommunityView: TrendingContentsView = {
@@ -88,7 +95,12 @@ class TrendingDetailVC: UIViewController {
         
         profileView.snp.makeConstraints {
             $0.width.equalTo(stackView.snp.width)
-            $0.height.equalTo(330.0)
+            $0.height.equalTo(604.0)
+        }
+        
+        scrollButton.snp.makeConstraints {
+            $0.width.equalTo(stackView.snp.width)
+            $0.height.equalTo(60.0)
         }
         
         interestCommunityView.snp.makeConstraints {

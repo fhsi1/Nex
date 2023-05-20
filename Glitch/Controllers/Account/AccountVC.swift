@@ -27,6 +27,16 @@ class AccountVC: UIViewController {
         return view
     }()
     
+    lazy var editProfileButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("프로필 편집", for: .normal)
+        button.setTitleColor(UIColor(red: 0.467, green: 0.467, blue: 0.467, alpha: 1), for: .normal)
+        button.backgroundColor = UIColor(red: 0.958, green: 0.958, blue: 0.958, alpha: 1)
+        button.layer.cornerRadius = 13.0
+        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 11)
+        return button
+    }()
+    
     @objc func flip(_ sender: CardView) {
         let transitionOptions: UIView.AnimationOptions = [
             .transitionFlipFromRight,
@@ -68,6 +78,8 @@ class AccountVC: UIViewController {
             cardView
         ].forEach { view.addSubview($0) }
         
+        cardView.profileCardView.addSubview(editProfileButton)
+        
         backView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -77,6 +89,13 @@ class AccountVC: UIViewController {
             $0.trailing.equalToSuperview().inset(31.0)
             $0.height.equalTo(540.0)
             $0.centerY.equalToSuperview()
+        }
+        
+        editProfileButton.snp.makeConstraints {
+            $0.centerY.equalTo(cardView.profileCardView.nameLabel.snp.centerY)
+            $0.leading.equalTo(cardView.profileCardView.nameLabel.snp.trailing).offset(4.0)
+            $0.height.equalTo(27.0)
+            $0.width.equalTo(77.0)
         }
     }
 }

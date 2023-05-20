@@ -16,18 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LaunchScreen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oN-Ih-gzY">
-                                <rect key="frame" x="142" y="428" width="109.33333333333331" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackView" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-uO-Zol">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3oN-Ih-gzY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VUx-NY-2Xg"/>
-                            <constraint firstItem="3oN-Ih-gzY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sEL-m1-mjG"/>
+                            <constraint firstItem="VvE-uO-Zol" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="N0c-JM-Www"/>
+                            <constraint firstItem="VvE-uO-Zol" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Ood-xc-tXq"/>
+                            <constraint firstAttribute="trailing" secondItem="VvE-uO-Zol" secondAttribute="trailing" id="ioz-L0-8jc"/>
+                            <constraint firstAttribute="bottom" secondItem="VvE-uO-Zol" secondAttribute="bottom" id="toy-OT-t4d"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +36,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackView" width="500" height="1082.6666259765625"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
