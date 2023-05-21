@@ -35,10 +35,10 @@ class CoreVC: UIViewController {
         
         let _storeUrl =  "itms-apps://itunes.apple.com/app/" + "core-crypto-wallet-nfts/id6443685999"
         
-//        let url = "Core://agoakfejjabomempkjlepdflaleeobhb/home.html#/"
-//        let url = "Core://X-avax1jggdngzc9l87rgurmfu0z0n0v4mxlqta0h3k6e"
+        //        let url = "Core://agoakfejjabomempkjlepdflaleeobhb/home.html#/"
+        //        let url = "Core://X-avax1jggdngzc9l87rgurmfu0z0n0v4mxlqta0h3k6e"
         
-//        let url = "Core://wallet.avax.network/access/privatekey"
+        //        let url = "Core://wallet.avax.network/access/privatekey"
         
         let url = "Core://create_wallet"
         
@@ -93,23 +93,20 @@ class CoreVC: UIViewController {
 extension CoreVC {
     func importWalletWith(privateKey: String) {
         let formattedKey = privateKey.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard let dataKey = Data.fromHex(formattedKey) else {
-//            self.showAlertMessage(title: "Error", message: "Please enter a valid Private key ", actionName: "Ok")
-            return
-        }
+        guard let dataKey = Data.fromHex(formattedKey) else { return }
+        
         do {
             let keystore =  try EthereumKeystoreV3(privateKey: dataKey, password: "")
             if let myWeb3KeyStore = keystore {
                 let manager = KeystoreManager([myWeb3KeyStore])
                 let address = keystore?.addresses?.first
 #if DEBUG
-                print("Address :::>>>>> ", address)
-                print("Address :::>>>>> ", manager.addresses)
+                print("Address :::>>>>> ", address ?? "")
+                print("Address :::>>>>> ", manager.addresses ?? "")
 #endif
                 let walletAddress = manager.addresses?.first?.address
-//                self.walletAddressLabel.text = walletAddress ?? "0x"
-
-                print(walletAddress)
+                
+                print(walletAddress ?? "")
             } else {
                 print("error")
             }
@@ -118,11 +115,6 @@ extension CoreVC {
             print("error creating keyStore")
             print("Private key error.")
 #endif
-            let alert = UIAlertController(title: "Error", message: "Please enter correct Private key", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .destructive)
-            alert.addAction(okAction)
-            self.present(alert, animated: true)
         }
-
     }
 }
