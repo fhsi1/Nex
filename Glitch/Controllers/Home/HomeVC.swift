@@ -28,6 +28,7 @@ class HomeVC: UIViewController {
     
     lazy var postButton: UIButton = {
         let button = UIButton()
+        button.setImage(UIImage(named: "add"), for: .normal)
         return button
     }()
     
@@ -107,7 +108,8 @@ class HomeVC: UIViewController {
             backView,
             titleButtonView,
             contentView1,
-            contentView2
+            contentView2,
+            postButton
         ].forEach { view.addSubview($0) }
         
         
@@ -134,6 +136,13 @@ class HomeVC: UIViewController {
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
+        }
+        
+        postButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(24.0)
+            $0.bottom.equalToSuperview().inset(96.0)
+            $0.height.equalTo(60.0)
+            $0.width.equalTo(postButton.snp.height)
         }
     }
 }
