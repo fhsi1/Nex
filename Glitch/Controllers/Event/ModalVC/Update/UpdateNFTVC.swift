@@ -65,6 +65,8 @@ class UpdateNFTVC: UIViewController {
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
         guard let delegate = sceneDelegate else { return }
         delegate.window?.rootViewController = mainViewController
+        
+        mainViewController.selectedIndex = 1
     }
     
     override func viewDidLoad() {
